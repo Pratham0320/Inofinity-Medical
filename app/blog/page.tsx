@@ -4,12 +4,10 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Search, Menu, X, Facebook, Twitter, Youtube, Instagram, Linkedin } from 'lucide-react';
+import { Search, Menu, X, Facebook, Twitter, Youtube, Instagram, Linkedin } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card";
 import { usePathname } from 'next/navigation';
 import { blogsData } from '@/app/blogs-data';
-
 
 interface BlogPost {
 id: string;
@@ -99,7 +97,7 @@ return (
     <div className="container mx-auto px-4 h-full flex items-center justify-between">
       <Link href="/" className="flex items-center">
         <Image
-          src="/images/cropped-inofinity_logo-1 (1).png"
+          src="/images/logo_PNG.png"
           alt="Inofinity Logo"
           width={isScrolled ? 144 : 192}
           height={isScrolled ? 48 : 64}
@@ -135,70 +133,86 @@ return (
   </motion.nav>
 
   {/* Hero Section */}
-  <section className="relative h-[40vh] min-h-[400px] w-full mt-14"> {/* Added margin-top */}
-    <Image src="/images/Blog/hero.png" alt="Hero Image" fill className="object-cover" priority />
-    <div className="absolute inset-0 bg-black/50" />
-    <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-      <div className="container px-4">
-        <motion.h1
-          className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Latest Insights in Medical Technology
-        </motion.h1>
-        <motion.p
-          className="mb-8 text-lg text-gray-200 sm:text-xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          Stay informed about the latest advancements and breakthroughs in medical technology.
-        </motion.p>
-      </div>
+<section className="relative h-[40vh] min-h-[400px] w-full">
+  <Image 
+    src="/images/Blog/hero.png" 
+    alt="Hero Image" 
+    fill 
+    className="object-cover" 
+    priority 
+  />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent" />
+  <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+    <div className="container px-4">
+      <motion.h1
+        className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Latest Insights in Medical Technology
+      </motion.h1>
+      <motion.p
+        className="mb-8 text-lg text-gray-200 sm:text-xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        Stay informed about the latest advancements and breakthroughs in medical technology.
+      </motion.p>
     </div>
-  </section>
+  </div>
+</section>
 
-  {/* Our Latest Blogs */}
+
+  {/* Blog Posts Section */}
   <section className="py-16 sm:py-24 bg-slate-50">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Our Latest Blogs</h2>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {blogsData.map((post, index) => (
-          <motion.div
-            key={post.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.03]">
-              <div className="relative h-48 w-full">
-                <Image
-                  src={post.image}
-                  alt={`Thumbnail for ${post.title}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{post.title}</CardTitle>
-                <p className="text-sm text-gray-500">{post.date}</p>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>{post.description}</CardDescription>
-              </CardContent>
-              <CardFooter>
-                <Link href={`/blog/${post.slug}`} legacyBehavior>
-                  <Button variant="outline" className="hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105">
-                    Read More
-                  </Button>
-                </Link>
-              </CardFooter>
-            </Card>
-          </motion.div>
-        ))}
+  {blogsData.map((post, index) => (
+    <motion.div
+      key={post.id}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <Link href={`/blog/${post.slug}`} legacyBehavior>
+  <div
+    className="group block transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+  >
+    {/* Card Container */}
+    <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      {/* Image Section */}
+      <div className="relative h-48 w-full">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+        />
       </div>
+      {/* Content Section */}
+      <div className="p-6">
+        <h3
+          className="text-xl font-semibold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-blue-500"
+        >
+          {post.title}
+        </h3>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+          {post.description}
+        </p>
+        <p className="text-gray-500 text-sm">{post.date}</p>
+      </div>
+    </div>
+  </div>
+</Link>
+
+    </motion.div>
+  ))}
+</div>
+
     </div>
   </section>
 
@@ -212,63 +226,89 @@ return (
   </button>
 
   {/* Footer */}
-  <footer className="bg-slate-900 text-white py-12 mt-16"> {/* Added margin-top */}
-    <div className="container mx-auto px-40">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Follow Us Section */}
-  <div className="mt-12">
-    <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Follow Us</h3>
-    <div className="flex justify-center space-x-6">
-      <Link
-        href="https://www.facebook.com/inofinityrnd"
-        target="_blank"
-        className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
-      >
-        <Facebook className="h-6 w-6 text-blue-600" />
-        <span className="sr-only">Facebook</span>
-      </Link>
-      <Link
-        href="https://twitter.com"
-        target="_blank"
-        className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
-      >
-        <Twitter className="h-6 w-6 text-blue-600" />
-        <span className="sr-only">Twitter</span>
-      </Link>
-      <Link
-        href="https://www.youtube.com/channel/UCflNnm0U1MZNv-_qNbrpPDQ"
-        target="_blank"
-        className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
-      >
-        <Youtube className="h-6 w-6 text-red-600" />
-        <span className="sr-only">YouTube</span>
-      </Link>
-      <Link
-        href="https://www.instagram.com/inofinityrnd/"
-        target="_blank"
-        className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
-      >
-        <Instagram className="h-6 w-6 text-pink-600" />
-        <span className="sr-only">Instagram</span>
-      </Link>
-      <Link
-        href="https://www.linkedin.com/company/inofinity-rnd-pvt-ltd/"
-        target="_blank"
-        className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
-      >
-        <Linkedin className="h-6 w-6 text-blue-600" />
-        <span className="sr-only">LinkedIn</span>
-      </Link>
-    </div>
-  </div>
-  {/* Copyright Section */}
-  <div className="text-center mt-12 pt-8 border-t border-slate-500">
-          <p className="text-md">© Inofinity Rnd Pvt Ltd</p>
-          
+  <footer className="bg-slate-900 text-white py-12 mt-16">
+  <div className="container mx-auto px-4">
+    {/* Grid for Footer Content */}
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-12 text-center md:text-left">
+      {/* Follow Us Section */}
+      <div>
+        <h3 className="text-2xl font-bold mb-6">Follow Us</h3>
+        <div className="flex justify-center md:justify-start space-x-4">
+          <Link href="https://www.facebook.com/inofinityrnd" target="_blank" aria-label="Facebook">
+            <Facebook className="h-6 w-6 hover:text-blue-500 transition-transform transform hover:scale-110" />
+          </Link>
+          <Link href="https://twitter.com" target="_blank" aria-label="Twitter">
+            <Twitter className="h-6 w-6 hover:text-blue-400 transition-transform transform hover:scale-110" />
+          </Link>
+          <Link href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+            <Youtube className="h-6 w-6 hover:text-red-600 transition-transform transform hover:scale-110" />
+          </Link>
+          <Link href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <Instagram className="h-6 w-6 hover:text-pink-500 transition-transform transform hover:scale-110" />
+          </Link>
+          <Link href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+            <Linkedin className="h-6 w-6 hover:text-blue-600 transition-transform transform hover:scale-110" />
+          </Link>
         </div>
       </div>
+
+      {/* Contact Section */}
+      <div>
+        <h3 className="text-2xl font-bold mb-6">Contact</h3>
+        <ul className="space-y-3 text-gray-400">
+          <li>
+            <Link href="mailto:info@inofinityrnd.com" className="hover:text-white">
+              Email: info@inofinityrnd.com
+            </Link>
+          </li>
+          <li>
+            <div>
+              <Link href="tel:+917978597090" className="hover:text-white">
+                Phone: +91 7978597090
+              </Link>
+              </div>
+            <div className="pl-14">
+              <Link href="tel:+918249634803" className="hover:text-white" >
+              +91 8249634803
+              </Link>
+            </div>
+          </li>
+          <li>
+            <span className="hover:text-white">
+              Address: O-HUB (Startup Odisha), Chandaka Industrial Estate, Bhubaneswar
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Newsletter Section */}
+      <div>
+        <h3 className="text-2xl font-bold mb-6">Subscribe to Our Newsletter</h3>
+        <form className="flex items-center justify-center md:justify-start">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-r-lg transition"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
     </div>
-  </footer>
+
+    {/* Divider */}
+    <div className="border-t border-gray-700 mt-8 pt-4 text-center">
+      <p className="text-gray-400 text-sm">
+        &copy; {new Date().getFullYear()} Inofinity Rnd Pvt Ltd. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
 </div>
 );
 }

@@ -242,11 +242,12 @@ export default function Contact() {
       </Link>
     </div>
   </div>
-  {/* Copyright Section */}
-  <div className="text-center mt-12 pt-8 border-t border-slate-500">
-          <p className="text-md">© Inofinity Rnd Pvt Ltd</p>
-          
-        </div>
+  {/* Divider */}
+  <div className="border-t border-gray-700 mt-8 pt-4 text-center">
+      <p className="text-gray-600 text-sm">
+        &copy; {new Date().getFullYear()} Inofinity Rnd Pvt Ltd. All Rights Reserved.
+      </p>
+    </div>
       </div>
     </div>
   );

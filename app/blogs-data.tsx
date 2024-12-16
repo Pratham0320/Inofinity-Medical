@@ -42,7 +42,7 @@ Dr Ashok is very tough while chosing post training questions and hands on evalua
     slug: 'new-blog-post',
     title: 'Interaction with Honourable CM of Odisha Shri Navin Pattnaik during OHUB inaguration',
     description: 'This is a placeholder for a new blog post.',
-    image: '/images/placeholder.svg',
+    image: '/images/Blog/blog4.jpeg',
     date: 'October 23, 2018',
     content: `Interaction with Honourable CM of Odisha Shri Navin Pattnaik during OHUB inaguration. Our Healthtech startup Inofinity research and development pvt ltd was selected due to novelty. Team thanked the govts policy to nurture starups which helped us to thrive even during pandemic and the 5T mantra which helped us in getting the benefits seamlessly even without visiting govt offices.
 Special thanks to Startup Odisha, DST, KIIT TBI, ILS and NRDC in our startup journey.
