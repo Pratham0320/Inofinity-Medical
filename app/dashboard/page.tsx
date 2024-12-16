@@ -139,32 +139,6 @@ export default function DashboardPage() {
           </form>
         </CardContent>
       </Card>
-
-      {/* Existing Blogs */}
-      <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">Existing Blogs</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog) => (
-            <div
-              key={blog.id}
-              className="border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
-            >
-              <div className="relative h-48">
-                <img
-                  src={blog.image}
-                  alt={blog.title}
-                  className="object-cover w-full h-full rounded-t-lg"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-medium">{blog.title}</h3>
-                <p className="text-gray-600">{blog.description}</p>
-                <p className="text-sm text-gray-500">{blog.date}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
