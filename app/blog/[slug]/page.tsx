@@ -5,7 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import {Search, Menu, X, Facebook, Twitter, Youtube, Instagram, Linkedin, Mail,} from "lucide-react";
+import { Search, Menu, X, Facebook, Twitter, Youtube, Instagram, Linkedin, Mail } from "lucide-react";
 import { MdWhatsapp } from "react-icons/md";
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -19,8 +19,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const scrollHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progressPercentage = (scrollTop / scrollHeight) * 100;
       setProgress(progressPercentage);
     };
@@ -90,6 +89,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <Link
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
                   currentBlogUrl
+                )}&quote=${encodeURIComponent(
+                  `Check out this amazing blog: "${blog.title}"`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -116,6 +117,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <Link
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
                   currentBlogUrl
+                )}&title=${encodeURIComponent(blog.title)}&summary=${encodeURIComponent(
+                  "I found this interesting blog. Check it out!"
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -139,9 +142,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               {/* Email Share */}
               <Link
                 href={`mailto:?subject=${encodeURIComponent(
-                  blog.title
+                  `Don't Miss This Blog: ${blog.title}`
                 )}&body=${encodeURIComponent(
-                  `I found this interesting blog:\n\n${blog.title}\n${currentBlogUrl}`
+                  `I found this interesting blog:\n\n"${blog.title}"\n${currentBlogUrl}`
                 )}`}
                 className="hover:scale-110 transition-transform"
               >
@@ -180,117 +183,16 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
         </aside>
       </div>
-      {/*Footer*/}
+
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-12 mt-16">
-        <div className="container mx-auto px-4">
-          {/* Grid for Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-12 text-center md:text-left">
-            {/* Follow Us Section */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Follow Us</h3>
-              <div className="flex justify-center md:justify-start space-x-4">
-                <Link
-                  href="https://www.facebook.com/inofinityrnd"
-                  target="_blank"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-6 w-6 hover:text-blue-500 transition-transform transform hover:scale-110" />
-                </Link>
-                <Link
-                  href="https://twitter.com"
-                  target="_blank"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-6 w-6 hover:text-blue-400 transition-transform transform hover:scale-110" />
-                </Link>
-                <Link
-                  href="https://www.youtube.com"
-                  target="_blank"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="h-6 w-6 hover:text-red-600 transition-transform transform hover:scale-110" />
-                </Link>
-                <Link
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-6 w-6 hover:text-pink-500 transition-transform transform hover:scale-110" />
-                </Link>
-                <Link
-                  href="https://www.linkedin.com"
-                  target="_blank"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-6 w-6 hover:text-blue-600 transition-transform transform hover:scale-110" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Contact Section */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Contact</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <Link
-                    href="mailto:info@inofinityrnd.com"
-                    className="hover:text-white"
-                  >
-                    Email: info@inofinityrnd.com
-                  </Link>
-                </li>
-                <li>
-                  <div>
-                    <Link href="tel:+917978597090" className="hover:text-white">
-                      Phone: +91 7978597090
-                    </Link>
-                  </div>
-                  <div className="pl-14">
-                    <Link href="tel:+918249634803" className="hover:text-white">
-                      +91 8249634803
-                    </Link>
-                  </div>
-                </li>
-                <li>
-                  <span className="hover:text-white">
-                    Address: O-HUB (Startup Odisha), Chandaka Industrial Estate,
-                    Bhubaneswar
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Newsletter Section */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6">
-                Subscribe to Our Newsletter
-              </h3>
-              <form className="flex items-center justify-center md:justify-start">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-r-lg transition"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="border-t border-gray-700 mt-8 pt-4 text-center">
-            <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Inofinity Rnd Pvt Ltd. All
-              Rights Reserved.
-            </p>
-          </div>
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-gray-400 text-sm">
+            &copy; {new Date().getFullYear()} Inofinity Rnd Pvt Ltd. All Rights Reserved.
+          </p>
         </div>
       </footer>
+
       {/* Back to Blogs Button */}
       <div className="fixed bottom-8 right-8">
         <Link href="/blog" legacyBehavior>
