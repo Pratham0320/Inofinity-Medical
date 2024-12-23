@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import Link from 'next/link'
 import { KioskModal } from './kiosk-modal'
 
 export function HeroSection() {
@@ -11,30 +9,46 @@ export function HeroSection() {
   const texts = ["DONATE  A  KIOSK  TO  SOCIETY ...", "TRAIN  YOUR  HANDS  TO  SAVE  A  LIFE ..."]
   const [currentImage, setCurrentImage] = useState(0)
   const [isKioskModalOpen, setIsKioskModalOpen] = useState(false)
+  const [backgroundImages, setBackgroundImages] = useState<string[]>([]);
 
-  const backgroundImages = [
-    'https://media.istockphoto.com/id/1441979374/photo/medical-team-meeting.jpg?s=612x612&w=0&k=20&c=2DM74ZVh8bv4hS5lbTKTnbozb9pR6-QeIk5zf2SFdoo=',
-    'https://media.istockphoto.com/id/862229772/photo/doctors-meeting.jpg?s=612x612&w=0&k=20&c=AJZGw45BZq5kIdU4OgdHJhUo1gvjKMXdJl_RO8BKL1o=',
-    'https://thumbs.dreamstime.com/z/operating-room-cardiac-surgery-photo-34025287.jpg?ct=jpeg-photo.jpg',
-    'https://thumbs.dreamstime.com/z/clean-professional-cardiologists-office-medical-equipment-including-ecg-machine-stethoscope-anatomical-heart-model-322967732.jpg?ct=jpeg'
+  // const backgroundImages = [
+  //   'https://media.istockphoto.com/id/1441979374/photo/medical-team-meeting.jpg?s=612x612&w=0&k=20&c=2DM74ZVh8bv4hS5lbTKTnbozb9pR6-QeIk5zf2SFdoo=',
+  //   'https://media.istockphoto.com/id/862229772/photo/doctors-meeting.jpg?s=612x612&w=0&k=20&c=AJZGw45BZq5kIdU4OgdHJhUo1gvjKMXdJl_RO8BKL1o=',
+  //   'https://thumbs.dreamstime.com/z/operating-room-cardiac-surgery-photo-34025287.jpg?ct=jpeg-photo.jpg',
+  //   'https://thumbs.dreamstime.com/z/clean-professional-cardiologists-office-medical-equipment-including-ecg-machine-stethoscope-anatomical-heart-model-322967732.jpg?ct=jpeg'
   
-  ]
+  // ]
 
-  // Update text every 5 seconds
+  useEffect(() => {
+    async function fetchImages() {
+      try {
+        const response = await fetch('/api/hero');
+        const data = await response.json();
+        if (Array.isArray(data.images)) {
+          setBackgroundImages(data.images);
+        }
+      } catch (error) {
+        console.error('Error fetching hero images:', error);
+      }
+    }
+    fetchImages();
+  }, []);
+
   useEffect(() => {
     const textTimer = setInterval(() => {
-      setCurrentText((prev) => (prev + 1) % texts.length)
-    }, 5000)
-    return () => clearInterval(textTimer)
-  }, [])
+      setCurrentText((prev) => (prev + 1) % texts.length);
+    }, 5000);
+    return () => clearInterval(textTimer);
+  }, []);
 
-  // Update background image every 5 seconds
   useEffect(() => {
-    const imageTimer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % backgroundImages.length)
-    }, 5000)
-    return () => clearInterval(imageTimer)
-  }, [])
+    if (backgroundImages.length > 0) {
+      const imageTimer = setInterval(() => {
+        setCurrentImage((prev) => (prev + 1) % backgroundImages.length);
+      }, 5000);
+      return () => clearInterval(imageTimer);
+    }
+  }, [backgroundImages]);
 
   const scrollToContact = () => {
     const getInTouchSection = document.getElementById('get-in-touch')

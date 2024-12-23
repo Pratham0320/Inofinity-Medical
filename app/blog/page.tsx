@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
+export const revalidate = 300
 // import { blogsData } from '@/app/blogs-data';
 
 interface BlogPost {
@@ -58,7 +59,7 @@ export default function BlogPage() {
 	useEffect(() => {
 		const fetchBlogs = async () => {
 			try {
-				const response = await fetch("/api/blogs", { cache: 'no-store' });
+				const response = await fetch("/api/blog", { cache: 'no-store' });
 				if (!response.ok) throw new Error("Failed to fetch blogs data");
 				const data: BlogPost[] = await response.json();
 				setBlogsData(data);

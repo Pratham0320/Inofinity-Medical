@@ -5,7 +5,7 @@ import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Medical Website',
+  title: 'Inofinity',
   description: 'Advanced medical solutions and technologies',
   icons: {
     icon: '/images/logo.jpeg',
