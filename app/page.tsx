@@ -9,7 +9,7 @@ import {NewsSection} from '@/components/news-section'
 import {GetInTouch} from '@/components/get-in-touch'
 import { Footer}  from '@/components/footer'
 import TeamSection from "@/components/team-section"
-import { TestimonialsSection } from '@/components/testimonials-section'
+// import { TestimonialsSection } from '@/components/testimonials-section'
 
 export default function Home() {
   return (
@@ -29,9 +29,9 @@ export default function Home() {
       <section id="team">
       <TeamSection />
       </section>
-      <section id="testimonials">
+      {/* <section id="testimonials">
         <TestimonialsSection />
-      </section>
+      </section> */}
       <section id="about">
         <GetInTouch />
       </section>
