@@ -101,108 +101,109 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
           <div className="my-8 border-t border-gray-300"></div>
 
           {/* Share Blog Section */}
-<section className="mt-8">
-  <h3 className="text-lg font-semibold mb-4 text-center">Share this Blog</h3>
-  <div className="flex justify-center space-x-6">
-    {/* Facebook Share */}
-    <Link
-      href="#"
-      onClick={(e) => {
-        e.preventDefault();
-        const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
-        window.open(
-          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-            fullUrl
-          )}`,
-          "_blank"
-        );
-      }}
-      className="hover:scale-110 transition-transform"
-    >
-      <Facebook className="h-10 w-10 text-blue-600" />
-    </Link>
+          <section className="mt-8">
+            <h3 className="text-lg font-semibold mb-4 text-center">
+              Share this Blog
+            </h3>
+            <div className="flex justify-center space-x-6">
+              {/* Facebook Share */}
+              <Link
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
+                  window.open(
+                    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                      fullUrl
+                    )}`,
+                    "_blank"
+                  );
+                }}
+                className="hover:scale-110 transition-transform"
+              >
+                <Facebook className="h-10 w-10 text-blue-600" />
+              </Link>
 
-    {/* Twitter Share */}
-    <Link
-      href="#"
-      onClick={(e) => {
-        e.preventDefault();
-        const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
-        window.open(
-          `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-            fullUrl
-          )}&text=${encodeURIComponent(
-            `Check out this amazing blog: "${blog.title}"`
-          )}`,
-          "_blank"
-        );
-      }}
-      className="hover:scale-110 transition-transform"
-    >
-      <Twitter className="h-10 w-10 text-blue-400" />
-    </Link>
+              {/* Twitter Share */}
+              <Link
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
+                  window.open(
+                    `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                      fullUrl
+                    )}&text=${encodeURIComponent(
+                      `Check out this amazing blog: "${blog.title}"`
+                    )}`,
+                    "_blank"
+                  );
+                }}
+                className="hover:scale-110 transition-transform"
+              >
+                <Twitter className="h-10 w-10 text-blue-400" />
+              </Link>
 
-    {/* LinkedIn Share */}
-    <Link
-      href="#"
-      onClick={(e) => {
-        e.preventDefault();
-        const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
-        window.open(
-          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-            fullUrl
-          )}&title=${encodeURIComponent(
-            blog.title
-          )}&summary=${encodeURIComponent(
-            "I found this interesting blog. Check it out!"
-          )}`,
-          "_blank"
-        );
-      }}
-      className="hover:scale-110 transition-transform"
-    >
-      <Linkedin className="h-10 w-10 text-blue-700" />
-    </Link>
+              {/* LinkedIn Share */}
+              <Link
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
+                  window.open(
+                    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                      fullUrl
+                    )}&title=${encodeURIComponent(
+                      blog.title
+                    )}&summary=${encodeURIComponent(
+                      "I found this interesting blog. Check it out!"
+                    )}`,
+                    "_blank"
+                  );
+                }}
+                className="hover:scale-110 transition-transform"
+              >
+                <Linkedin className="h-10 w-10 text-blue-700" />
+              </Link>
 
-    {/* WhatsApp Share */}
-    <Link
-      href="#"
-      onClick={(e) => {
-        e.preventDefault();
-        const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
-        window.open(
-          `https://wa.me/?text=${encodeURIComponent(
-            `Check out this blog: "${blog.title}"\n${fullUrl}`
-          )}`,
-          "_blank"
-        );
-      }}
-      className="hover:scale-110 transition-transform"
-    >
-      <MdWhatsapp className="h-10 w-10 text-green-500" />
-    </Link>
+              {/* WhatsApp Share */}
+              <Link
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
+                  window.open(
+                    `https://wa.me/?text=${encodeURIComponent(
+                      `Check out this blog: "${blog.title}"\n${fullUrl}`
+                    )}`,
+                    "_blank"
+                  );
+                }}
+                className="hover:scale-110 transition-transform"
+              >
+                <MdWhatsapp className="h-10 w-10 text-green-500" />
+              </Link>
 
-    {/* Email Share */}
-    <Link
-      href="#"
-      onClick={(e) => {
-        e.preventDefault();
-        const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
-        window.open(
-          `mailto:?subject=${encodeURIComponent(
-            `Don't Miss This Blog: ${blog.title}`
-          )}&body=${encodeURIComponent(
-            `I found this interesting blog:\n\n"${blog.title}"\n${fullUrl}`
-          )}`
-        );
-      }}
-      className="hover:scale-110 transition-transform"
-    >
-      <Mail className="h-10 w-10 text-red-700" />
-    </Link>
-  </div>
-</section>
-
+              {/* Email Share */}
+              <Link
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const fullUrl = `${window.location.origin}/blog/${blog.slug}`;
+                  window.open(
+                    `mailto:?subject=${encodeURIComponent(
+                      `Don't Miss This Blog: ${blog.title}`
+                    )}&body=${encodeURIComponent(
+                      `I found this interesting blog:\n\n"${blog.title}"\n${fullUrl}`
+                    )}`
+                  );
+                }}
+                className="hover:scale-110 transition-transform"
+              >
+                <Mail className="h-10 w-10 text-red-700" />
+              </Link>
+            </div>
+          </section>
         </article>
       </div>
 
