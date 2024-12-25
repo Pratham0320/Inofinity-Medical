@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { UploadButton } from '@/utils/uploadthing';
+import { UploadButton } from "@/utils/uploadthing";
 
 export default function ImageTab() {
   const [images, setImages] = useState<string[]>([]);
@@ -23,8 +23,8 @@ export default function ImageTab() {
     if (res && res[0]) {
       const newImageUrl = res[0].url;
       try {
-        const token = localStorage.getItem("token")?.replace(/\n/g, '');
-        const authToken = "Bearer"+" "+ token;
+        const token = localStorage.getItem("token")?.replace(/\n/g, "");
+        const authToken = "Bearer" + " " + token;
         await fetch("/api/hero", {
           method: "POST",
           headers: {
@@ -49,7 +49,7 @@ export default function ImageTab() {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            Authorization: token ? `Bearer ${token}` : '',
+            Authorization: token ? `Bearer ${token}` : "",
           },
           body: JSON.stringify({ index, image: updatedImageUrl }),
         });
@@ -69,7 +69,7 @@ export default function ImageTab() {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          Authorization: token ? `Bearer ${token}` : '',
+          Authorization: token ? `Bearer ${token}` : "",
         },
         body: JSON.stringify({ image }),
       });
@@ -82,7 +82,7 @@ export default function ImageTab() {
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold mb-6">Manage Hero Images</h1>
-      
+
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Upload New Image</h2>
         <div className="inline-block">
@@ -93,8 +93,9 @@ export default function ImageTab() {
               alert(`Image upload failed: ${error.message}`);
             }}
             appearance={{
-              button: "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors",
-              container: "min-w-[200px]"
+              button:
+                "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors",
+              container: "min-w-[200px]",
             }}
           />
         </div>
@@ -105,13 +106,13 @@ export default function ImageTab() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {images.map((image, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-4">
-              <img 
-                src={image} 
-                alt={`Hero ${index}`} 
+              <img
+                src={image}
+                alt={`Hero ${index}`}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <div className="flex items-center gap-4">
-                <button 
+                <button
                   onClick={() => handleDelete(image)}
                   className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
                 >
@@ -125,8 +126,9 @@ export default function ImageTab() {
                       alert(`Image upload failed: ${error.message}`);
                     }}
                     appearance={{
-                      button: "px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors",
-                      container: "min-w-[120px]"
+                      button:
+                        "px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors",
+                      container: "min-w-[120px]",
                     }}
                   />
                 </div>

@@ -7,7 +7,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
 );
 
-export const revalidate = 60
+export const revalidate = 60;
 
 export default async function BlogPostPage({
   params,
@@ -24,5 +24,5 @@ export default async function BlogPostPage({
 
   if (!blog || blogError) notFound();
 
-  return <BlogPage blog={blog}/>;
+  return <BlogPage blog={blog} />;
 }

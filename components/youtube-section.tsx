@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export function YouTubeSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +43,7 @@ export function YouTubeSection() {
           viewBox="0 0 1440 320"
           className="w-full h-auto"
           preserveAspectRatio="none"
-          style={{ marginTop: -1, transform: 'rotate(180deg)' }}
+          style={{ marginTop: -1, transform: "rotate(180deg)" }}
         >
           <path
             d="M0,128L80,144C160,160,320,192,480,192C640,192,800,160,960,149.3C1120,139,1280,149,1360,154.7L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
@@ -82,18 +82,23 @@ export function YouTubeSection() {
           <div
             ref={textRef}
             className={`w-full lg:w-1/2 mt-8 lg:mt-0 transition-opacity duration-1000 ease-in-out transform ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-20"
             }`}
           >
             <h3 className="text-2xl font-extrabold mb-4 text-white font-serif">
               Did You Know?
             </h3>
             <p className="text-gray-200 text-lg leading-relaxed mb-6 font-roboto">
-              About 90% of cardiac arrests occur outside the hospital, and a victim's brain suffers permanent damage after 6 minutes of cardiac arrest.
-              Only less than 10% of victims survive if taken to a hospital.
+              About 90% of cardiac arrests occur outside the hospital, and a
+              victim's brain suffers permanent damage after 6 minutes of cardiac
+              arrest. Only less than 10% of victims survive if taken to a
+              hospital.
               <br />
-              <br />
-              A bystander can give CPR, chest compressions at 100 per minute, until emergency medical help arrives. CPR is a life-saving skill.
+              <br />A bystander can give CPR, chest compressions at 100 per
+              minute, until emergency medical help arrives. CPR is a life-saving
+              skill.
             </p>
             <div className="mt-8 text-center">
               <a
@@ -111,4 +116,3 @@ export function YouTubeSection() {
     </section>
   );
 }
-

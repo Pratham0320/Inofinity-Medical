@@ -1,14 +1,17 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { KioskModal } from './kiosk-modal'
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { KioskModal } from "./kiosk-modal";
 
 export function HeroSection() {
-  const [currentText, setCurrentText] = useState(0)
-  const texts = ["DONATE  A  KIOSK  TO  SOCIETY ...", "TRAIN  YOUR  HANDS  TO  SAVE  A  LIFE ..."]
-  const [currentImage, setCurrentImage] = useState(0)
-  const [isKioskModalOpen, setIsKioskModalOpen] = useState(false)
+  const [currentText, setCurrentText] = useState(0);
+  const texts = [
+    "DONATE  A  KIOSK  TO  SOCIETY ...",
+    "TRAIN  YOUR  HANDS  TO  SAVE  A  LIFE ...",
+  ];
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isKioskModalOpen, setIsKioskModalOpen] = useState(false);
   const [backgroundImages, setBackgroundImages] = useState<string[]>([]);
 
   // const backgroundImages = [
@@ -16,19 +19,19 @@ export function HeroSection() {
   //   'https://media.istockphoto.com/id/862229772/photo/doctors-meeting.jpg?s=612x612&w=0&k=20&c=AJZGw45BZq5kIdU4OgdHJhUo1gvjKMXdJl_RO8BKL1o=',
   //   'https://thumbs.dreamstime.com/z/operating-room-cardiac-surgery-photo-34025287.jpg?ct=jpeg-photo.jpg',
   //   'https://thumbs.dreamstime.com/z/clean-professional-cardiologists-office-medical-equipment-including-ecg-machine-stethoscope-anatomical-heart-model-322967732.jpg?ct=jpeg'
-  
+
   // ]
 
   useEffect(() => {
     async function fetchImages() {
       try {
-        const response = await fetch('/api/hero');
+        const response = await fetch("/api/hero");
         const data = await response.json();
         if (Array.isArray(data.images)) {
           setBackgroundImages(data.images);
         }
       } catch (error) {
-        console.error('Error fetching hero images:', error);
+        console.error("Error fetching hero images:", error);
       }
     }
     fetchImages();
@@ -51,37 +54,37 @@ export function HeroSection() {
   }, [backgroundImages]);
 
   const scrollToContact = () => {
-    const getInTouchSection = document.getElementById('get-in-touch')
+    const getInTouchSection = document.getElementById("get-in-touch");
     if (getInTouchSection) {
-      getInTouchSection.scrollIntoView({ behavior: 'smooth' })
+      getInTouchSection.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   const imageVariants = {
-    initial: { x: '100%', opacity: 0 },
+    initial: { x: "100%", opacity: 0 },
     animate: { x: 0, opacity: 1, transition: { duration: 1 } },
-    exit: { x: '-100%', opacity: 0, transition: { duration: 1 } }
-  }
+    exit: { x: "-100%", opacity: 0, transition: { duration: 1 } },
+  };
 
   const containerVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { staggerChildren: 0.1 } },
-    exit: { opacity: 0, transition: { duration: 0.5 } }
-  }
+    exit: { opacity: 0, transition: { duration: 0.5 } },
+  };
 
   const letterVariants = {
     initial: { opacity: 0, y: 50 },
-    animate: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { type: "spring", damping: 10, stiffness: 100 }
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", damping: 10, stiffness: 100 },
     },
     exit: {
       opacity: 0,
       y: -50,
-      transition: { duration: 0.2 }
-    }
-  }
+      transition: { duration: 0.2 },
+    },
+  };
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -95,7 +98,9 @@ export function HeroSection() {
             animate="animate"
             exit="exit"
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${backgroundImages[currentImage]})` }}
+            style={{
+              backgroundImage: `url(${backgroundImages[currentImage]})`,
+            }}
           />
         </AnimatePresence>
       </div>
@@ -124,7 +129,6 @@ export function HeroSection() {
             INOFINITY
           </motion.h1>
 
-
           <div className="h-24 mb-12">
             <AnimatePresence mode="wait">
               <motion.div
@@ -135,11 +139,11 @@ export function HeroSection() {
                 exit="exit"
                 className="text-xl md:text-3xl text-gray-300 font-light"
               >
-                {texts[currentText].split('').map((letter, index) => (
+                {texts[currentText].split("").map((letter, index) => (
                   <motion.span
                     key={index}
                     variants={letterVariants}
-                    style={{ display: 'inline-block' }}
+                    style={{ display: "inline-block" }}
                     className="mr-[0.2em]"
                   >
                     {letter}
@@ -158,7 +162,7 @@ export function HeroSection() {
             <button
               onClick={scrollToContact}
               className="bg-[#0077b6] hover:bg-[#006da7] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
-              style={{ borderRadius: '50px', width: 'fit-content' }}
+              style={{ borderRadius: "50px", width: "fit-content" }}
             >
               CONTACT US
             </button>
@@ -166,7 +170,7 @@ export function HeroSection() {
             <button
               onClick={() => setIsKioskModalOpen(true)}
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-800 font-bold text-lg px-10 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
-              style={{ borderRadius: '50px', width: 'fit-content' }}
+              style={{ borderRadius: "50px", width: "fit-content" }}
             >
               ABOUT KIOSK
             </button>
@@ -201,7 +205,10 @@ export function HeroSection() {
         </svg>
       </div>
 
-      <KioskModal isOpen={isKioskModalOpen} onClose={() => setIsKioskModalOpen(false)} />
+      <KioskModal
+        isOpen={isKioskModalOpen}
+        onClose={() => setIsKioskModalOpen(false)}
+      />
     </div>
-  )
+  );
 }

@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X } from 'lucide-react'
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 
 interface KioskModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export function KioskModal({ isOpen, onClose }: KioskModalProps) {
@@ -34,12 +34,15 @@ export function KioskModal({ isOpen, onClose }: KioskModalProps) {
             >
               <X size={24} />
             </button>
-            <h2 className="text-3xl font-bold mb-4 text-gray-800">About Our Kiosk</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-800">
+              About Our Kiosk
+            </h2>
             <div className="prose max-w-none">
               <p>
-                Our state-of-the-art medical kiosk is designed to revolutionize public health and safety. 
-                Placed in high-traffic areas such as airports and railway stations, these kiosks serve as 
-                life-saving stations in times of emergency.
+                Our state-of-the-art medical kiosk is designed to revolutionize
+                public health and safety. Placed in high-traffic areas such as
+                airports and railway stations, these kiosks serve as life-saving
+                stations in times of emergency.
               </p>
               <h3 className="text-xl font-semibold mt-4 mb-2">Key Features:</h3>
               <ul>
@@ -50,15 +53,16 @@ export function KioskModal({ isOpen, onClose }: KioskModalProps) {
                 <li>Multilingual support for diverse populations</li>
               </ul>
               <p className="mt-4">
-                Our kiosks are equipped with Sanjivani QCPR technology, ensuring that even untrained 
-                bystanders can provide effective assistance during cardiac emergencies. With clear, 
-                step-by-step instructions and real-time feedback, these kiosks significantly increase 
-                the chances of survival for cardiac arrest victims.
+                Our kiosks are equipped with Sanjivani QCPR technology, ensuring
+                that even untrained bystanders can provide effective assistance
+                during cardiac emergencies. With clear, step-by-step
+                instructions and real-time feedback, these kiosks significantly
+                increase the chances of survival for cardiac arrest victims.
               </p>
             </div>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

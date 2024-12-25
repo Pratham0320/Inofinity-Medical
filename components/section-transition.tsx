@@ -1,17 +1,20 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function SectionTransition() {
   return (
     <div className="relative h-[30vh] overflow-hidden bg-[#1d417b]">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       {/* Animated Lines */}
@@ -26,13 +29,13 @@ export function SectionTransition() {
               top: `${20 * (i + 1)}%`,
             }}
             animate={{
-              translateX: ['-100%', '100%'],
+              translateX: ["-100%", "100%"],
             }}
             transition={{
               duration: 8,
               delay: i * 0.5,
               repeat: Infinity,
-              ease: 'linear',
+              ease: "linear",
             }}
           />
         ))}
@@ -72,24 +75,27 @@ export function SectionTransition() {
 
       {/* Bottom Wave */}
       <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-        <svg className="relative block w-full h-[50px]" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <svg
+          className="relative block w-full h-[50px]"
+          viewBox="0 0 1200 60"
+          preserveAspectRatio="none"
+        >
           <g transform="translate(0,-10)">
-            <path 
-              d="M0,20 C300,60 900,-20 1200,20 L1200,80 L0,80 Z" 
+            <path
+              d="M0,20 C300,60 900,-20 1200,20 L1200,80 L0,80 Z"
               className="fill-[#1a365d] opacity-30"
             />
-            <path 
-              d="M0,30 C300,70 900,-10 1200,30 L1200,80 L0,80 Z" 
+            <path
+              d="M0,30 C300,70 900,-10 1200,30 L1200,80 L0,80 Z"
               className="fill-[#2563eb] opacity-20"
             />
-            <path 
-              d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" 
+            <path
+              d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z"
               className="fill-[#60a5fa] opacity-10"
             />
           </g>
         </svg>
       </div>
     </div>
-  )
+  );
 }
-

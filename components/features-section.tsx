@@ -1,14 +1,15 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { motion, Variants } from 'framer-motion'
-import { BarChart3, Settings, Award } from 'lucide-react'
+import React from "react";
+import { motion, Variants } from "framer-motion";
+import { BarChart3, Settings, Award } from "lucide-react";
 
 const features = [
   {
     icon: BarChart3,
     title: "Foster Ideas",
-    description: "T-TARGET, AGS-MINI, NIGHTINAGLE, YOGA-NIDRA, I-CODE, BLUE–CLOUD",
+    description:
+      "T-TARGET, AGS-MINI, NIGHTINAGLE, YOGA-NIDRA, I-CODE, BLUE–CLOUD",
   },
   {
     icon: Settings,
@@ -20,17 +21,17 @@ const features = [
     title: "Grants",
     description: "NIDHIPRAYAS, Startup Odisha, BIG ( BIRAC )",
   },
-]
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3
-    }
-  }
-}
+      staggerChildren: 0.3,
+    },
+  },
+};
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -39,10 +40,10 @@ const itemVariants = {
     opacity: 1,
     transition: {
       type: "spring",
-      stiffness: 100
-    }
-  }
-}
+      stiffness: 100,
+    },
+  },
+};
 
 const shakeAnimation: Variants = {
   hover: {
@@ -51,8 +52,8 @@ const shakeAnimation: Variants = {
       duration: 0.8,
       repeat: Infinity,
       repeatType: "reverse",
-    }
-  }
+    },
+  },
 };
 
 export function FeaturesSection() {
@@ -80,7 +81,7 @@ export function FeaturesSection() {
       </div>
 
       <div className="container mx-auto px-4 py-24">
-        <motion.h2 
+        <motion.h2
           className="text-5xl font-extrabold text-center mb-24 text-white"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,19 +89,21 @@ export function FeaturesSection() {
         >
           Innovate. Develop. Achieve.
         </motion.h2>
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-16 relative mt-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {features.map((feature, index) => (
-            <motion.div 
+            <motion.div
               key={index}
-              className={`flex flex-col items-center ${index === 1 ? 'md:-mt-16' : ''}`}
+              className={`flex flex-col items-center ${
+                index === 1 ? "md:-mt-16" : ""
+              }`}
               variants={itemVariants}
             >
-              <motion.div 
+              <motion.div
                 className="w-64 h-64 rounded-full bg-white flex flex-col items-center justify-center shadow-lg group relative overflow-hidden cursor-pointer mb-8"
                 whileHover="hover"
                 variants={shakeAnimation}
@@ -139,6 +142,5 @@ export function FeaturesSection() {
         </svg>
       </div>
     </section>
-  )
+  );
 }
-

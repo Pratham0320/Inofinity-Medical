@@ -1,11 +1,13 @@
-import React from "react"
-import { MdEmail, MdPerson, MdPhone, MdMessage, MdSend } from "react-icons/md"
+import React from "react";
+import { MdEmail, MdPerson, MdPhone, MdMessage, MdSend } from "react-icons/md";
 
 export function GetInTouch() {
   return (
     <section id="get-in-touch" className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 md:mb-12 -mt-16 md:-mt-20 pt-16 md:pt-20">Get in Touch</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 md:mb-12 -mt-16 md:-mt-20 pt-16 md:pt-20">
+          Get in Touch
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="w-full h-full">
             {/* Updated Google Map Embed */}
@@ -34,8 +36,16 @@ export function GetInTouch() {
             action="https://formsubmit.co/info@infonityrnd.in"
             method="POST"
           >
-            <input type="hidden" name="_next" value="https://your-website.com/thanks" />
-            <input type="hidden" name="_subject" value="New contact form submission" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://your-website.com/thanks"
+            />
+            <input
+              type="hidden"
+              name="_subject"
+              value="New contact form submission"
+            />
 
             <div className="relative">
               <MdPerson className="absolute left-4 top-4 h-5 w-5 text-gray-400" />
@@ -89,5 +99,5 @@ export function GetInTouch() {
         </div>
       </div>
     </section>
-  )
+  );
 }
