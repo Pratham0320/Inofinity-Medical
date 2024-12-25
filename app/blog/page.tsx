@@ -17,7 +17,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 export const revalidate = 300
-// import { blogsData } from '@/app/blogs-data';
 
 interface BlogPost {
 	id: string;
