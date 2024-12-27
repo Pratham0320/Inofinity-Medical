@@ -39,7 +39,7 @@ export function GetInTouch() {
             <input
               type="hidden"
               name="_next"
-              value="https://your-website.com/thanks"
+              value="https://inofinity.vercel.app"
             />
             <input
               type="hidden"
