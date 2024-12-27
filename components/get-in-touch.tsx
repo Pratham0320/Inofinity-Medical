@@ -50,7 +50,7 @@ export function GetInTouch() {
             <div className="relative">
               <MdPerson className="absolute left-4 top-4 h-5 w-5 text-gray-400" />
               <input
-                name="name"
+                name="Name"
                 placeholder="Your Name"
                 className="pl-12 bg-white border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-12 text-base w-full rounded-md transition duration-200"
                 required
@@ -61,7 +61,7 @@ export function GetInTouch() {
               <MdEmail className="absolute left-4 top-4 h-5 w-5 text-gray-400" />
               <input
                 type="email"
-                name="email"
+                name="Email"
                 placeholder="Your Email"
                 className="pl-12 bg-white border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-12 text-base w-full rounded-md transition duration-200"
                 required
@@ -81,7 +81,7 @@ export function GetInTouch() {
             <div className="relative">
               <MdMessage className="absolute left-4 top-4 h-5 w-5 text-gray-400" />
               <textarea
-                name="message"
+                name="Message"
                 placeholder="Your Message"
                 className="pl-12 pt-3 bg-white border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 min-h-[150px] text-base w-full rounded-md transition duration-200"
                 required

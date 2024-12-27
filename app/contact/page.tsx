@@ -6,24 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useState } from "react";
 import { Facebook, Twitter, Youtube, Instagram, Linkedin } from "lucide-react";
 import { MdEmail, MdPerson, MdMessage } from "react-icons/md";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSuccess(true);
-    setName("");
-    setEmail("");
-    setMessage("");
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <ContactNavigation />
@@ -147,78 +133,78 @@ export default function Contact() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">
               Send Us a Message
             </h2>
-            {success ? (
-              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                <p>
-                  Thank you for reaching out. We’ll get back to you shortly.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <div className="relative">
-                  <Label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Name
-                  </Label>
-                  <MdPerson className="absolute left-4 top-10 h-5 w-5 text-gray-400" />
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    placeholder="Enter your name"
-                    className="pl-12 mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 text-gray-500"
-                  />
-                </div>
-                <div className="relative">
-                  <Label
-                    htmlFor="email"
-                    className="block mt-4 text-sm font-medium text-gray-700"
-                  >
-                    Email
-                  </Label>
-                  <MdEmail className="absolute left-4 top-10 h-5 w-5 text-gray-400" />
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    placeholder="Enter your email address"
-                    className="pl-12 mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 text-gray-500"
-                  />
-                </div>
-                <div className="relative">
-                  <Label
-                    htmlFor="message"
-                    className="block mt-4 text-sm font-medium text-gray-700"
-                  >
-                    Message
-                  </Label>
-                  <MdMessage className="absolute left-4 top-10 h-5 w-5 text-gray-400" />
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    required
-                    placeholder="Write your message here"
-                    className="pl-12 mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 text-gray-500"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+            <form
+              action="https://formsubmit.co/info@inofinityrnd.com"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="_next"
+                value="https://inofinity.vercel.app/contact"
+              />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New contact form submission"
+              />
+
+              <div className="relative">
+                <Label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
                 >
-                  Submit
-                </Button>
-              </form>
-            )}
+                  Name
+                </Label>
+                <MdPerson className="absolute left-4 top-10 h-5 w-5 text-gray-400" />
+                <Input
+                  id="name"
+                  name="Name"
+                  type="text"
+                  required
+                  placeholder="Enter your name"
+                  className="pl-12 mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 text-gray-500"
+                />
+              </div>
+              <div className="relative">
+                <Label
+                  htmlFor="email"
+                  className="block mt-4 text-sm font-medium text-gray-700"
+                >
+                  Email
+                </Label>
+                <MdEmail className="absolute left-4 top-10 h-5 w-5 text-gray-400" />
+                <Input
+                  id="email"
+                  name="Email"
+                  type="email"
+                  required
+                  placeholder="Enter your email address"
+                  className="pl-12 mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 text-gray-500"
+                />
+              </div>
+              <div className="relative">
+                <Label
+                  htmlFor="message"
+                  className="block mt-4 text-sm font-medium text-gray-700"
+                >
+                  Message
+                </Label>
+                <MdMessage className="absolute left-4 top-10 h-5 w-5 text-gray-400" />
+                <Textarea
+                  id="message"
+                  name="Message"
+                  required
+                  placeholder="Write your message here"
+                  className="pl-12 mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 text-gray-500"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+              >
+                Submit
+              </Button>
+            </form>
           </div>
         </div>
 
