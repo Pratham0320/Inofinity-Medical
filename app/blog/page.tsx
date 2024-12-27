@@ -183,7 +183,7 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Latest Insights in Medical Technology
+              Latest Insights in Inofinity's Medical Technology
             </motion.h1>
             <motion.p
               className="mb-8 text-lg text-gray-200 sm:text-xl"
@@ -191,8 +191,7 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Stay informed about the latest advancements and breakthroughs in
-              medical technology.
+              Stay informed about the latest advancements and breakthroughs of Inofinity RnD.
             </motion.p>
           </div>
         </div>
