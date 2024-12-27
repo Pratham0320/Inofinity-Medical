@@ -68,7 +68,7 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
             alt={blog.title}
             layout="fill"
             objectFit="cover"
-            objectPosition="top"
+            objectPosition= "top"
           />
         </div>
 
