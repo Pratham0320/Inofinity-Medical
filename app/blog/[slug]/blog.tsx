@@ -90,7 +90,7 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
 
       {/* Content */}
       <div className="container mx-auto px-6 lg:px-24 py-16">
-        <article className="bg-white p-12 rounded-xl shadow-lg border border-gray-200">
+        <article className="bg-white p-12 rounded-xl shadow-lg border border-gray-200 max-w-4xl mx-auto">
           {/* Blog Content */}
           <div className="prose lg:prose-xl prose-blue mx-auto text-gray-800 leading-relaxed" style={{ textAlign: 'justify' }}>
             {/* Markdown content */}
