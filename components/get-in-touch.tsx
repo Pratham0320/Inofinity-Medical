@@ -18,7 +18,7 @@ export function GetInTouch() {
                   width="100%"
                   frameBorder="0"
                   scrolling="no"
-                  src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=O-HUB (Startup Odisha)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=SAI PARADISE- Daruthenga&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 ></iframe>
               </div>
               <style>
@@ -33,7 +33,7 @@ export function GetInTouch() {
 
           <form
             className="w-full space-y-6"
-            action="https://formsubmit.co/info@infonityrnd.in"
+            action="https://formsubmit.co/info@inofinityrnd.com"
             method="POST"
           >
             <input

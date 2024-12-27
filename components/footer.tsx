@@ -77,15 +77,14 @@ export function Footer() {
                   </Link>
                 </div>
                 <div className="pl-14">
-                  <Link href="tel:+918249634803" className="hover:text-white">
-                    +91 8249634803
+                  <Link href="tel:+919439667800" className="hover:text-white">
+                    +91 9439667800
                   </Link>
                 </div>
               </li>
               <li>
                 <span className="hover:text-white">
-                  Address: O-HUB (Startup Odisha), Chandaka Industrial Estate,
-                  Bhubaneswar
+                  Address: SAI PARADISE-DUPLEX-95, Daruthenga, KISS Rd, Chandaka Industrial Estate, Patia, Bhubaneswar
                 </span>
               </li>
             </ul>

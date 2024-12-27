@@ -25,7 +25,7 @@ export default function ImageTab() {
       try {
         const token = localStorage.getItem("token")?.replace(/\n/g, "");
         const authToken = "Bearer" + " " + token;
-        await fetch("https://inofinity.vercel.app/api/hero", {
+        await fetch("/api/hero", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
