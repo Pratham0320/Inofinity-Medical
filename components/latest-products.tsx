@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 export function LatestProducts() {
   const [currentProduct, setCurrentProduct] = useState(0);
-  const products = ["Kalamscope...", "Sanjivani QCPR..."];
+  const products = ["Kalamscope...", "Sanjivani  QCPR..."];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -46,7 +46,7 @@ export function LatestProducts() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/KALAMSCOPE-PIC.jpg"
-          alt="Medical laboratory equipment"
+          alt="Medical equipment"
           fill
           sizes="100vw"
           priority
@@ -98,7 +98,7 @@ export function LatestProducts() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Link href="#contact-section" passHref>
+            <Link href="/blog" passHref>
               <button className="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
                 Learn More
               </button>

@@ -35,21 +35,21 @@ export function Footer() {
                 <Twitter className="h-6 w-6 hover:text-blue-400 transition-transform transform hover:scale-110" />
               </Link>
               <Link
-                href="https://www.youtube.com"
+                href="https://www.youtube.com/channel/UCflNnm0U1MZNv-_qNbrpPDQ"
                 target="_blank"
                 aria-label="YouTube"
               >
                 <Youtube className="h-6 w-6 hover:text-red-600 transition-transform transform hover:scale-110" />
               </Link>
               <Link
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/inofinityrnd/"
                 target="_blank"
                 aria-label="Instagram"
               >
                 <Instagram className="h-6 w-6 hover:text-pink-500 transition-transform transform hover:scale-110" />
               </Link>
               <Link
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/inofinity-rnd-pvt-ltd/"
                 target="_blank"
                 aria-label="LinkedIn"
               >
@@ -119,7 +119,7 @@ export function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li>
                 <Link
-                  href="https://inofinityrnd.com/index.php/blog/"
+                  href="https://inofinityrnd.com/blog/"
                   target="_blank"
                   className="hover:text-gray-300 transition-colors"
                 >
@@ -128,7 +128,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://inofinityrnd.com/index.php/blog/"
+                  href="https://inofinityrnd.com/blog/"
                   target="_blank"
                   className="hover:text-gray-300 transition-colors"
                 >

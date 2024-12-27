@@ -98,7 +98,7 @@ export default function Contact() {
                     <h3 className="text-lg font-bold text-gray-800">Call Us</h3>
                     <p className="text-md text-gray-700">
                       (+91) 7978597090 <br />
-                      (+91) 8249634803
+                      (+91) 9439667800
                     </p>
                   </div>
                 </div>
@@ -119,7 +119,9 @@ export default function Contact() {
                     <h3 className="text-lg font-bold text-gray-800">
                       Send Us Mail
                     </h3>
-                    <p className="text-md text-gray-700">info@infonityrnd.in</p>
+                    <p className="text-md text-gray-700">
+                      info@inofinityrnd.com
+                    </p>
                   </div>
                 </div>
                 <div>
@@ -129,7 +131,7 @@ export default function Contact() {
                   <iframe
                     className="w-full h-[400px] mt-4 rounded-sm"
                     frameBorder="0"
-                    src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=O-HUB (Startup Odisha)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=SAI PARADISE- Daruthenga&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     style={{
                       boxShadow:
                         "0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.2)",

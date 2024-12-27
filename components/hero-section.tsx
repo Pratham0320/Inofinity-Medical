@@ -14,14 +14,6 @@ export function HeroSection() {
   const [isKioskModalOpen, setIsKioskModalOpen] = useState(false);
   const [backgroundImages, setBackgroundImages] = useState<string[]>([]);
 
-  // const backgroundImages = [
-  //   'https://media.istockphoto.com/id/1441979374/photo/medical-team-meeting.jpg?s=612x612&w=0&k=20&c=2DM74ZVh8bv4hS5lbTKTnbozb9pR6-QeIk5zf2SFdoo=',
-  //   'https://media.istockphoto.com/id/862229772/photo/doctors-meeting.jpg?s=612x612&w=0&k=20&c=AJZGw45BZq5kIdU4OgdHJhUo1gvjKMXdJl_RO8BKL1o=',
-  //   'https://thumbs.dreamstime.com/z/operating-room-cardiac-surgery-photo-34025287.jpg?ct=jpeg-photo.jpg',
-  //   'https://thumbs.dreamstime.com/z/clean-professional-cardiologists-office-medical-equipment-including-ecg-machine-stethoscope-anatomical-heart-model-322967732.jpg?ct=jpeg'
-
-  // ]
-
   useEffect(() => {
     async function fetchImages() {
       try {

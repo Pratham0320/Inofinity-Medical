@@ -231,21 +231,21 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
                   <Twitter className="h-6 w-6 hover:text-blue-400 transition-transform transform hover:scale-110" />
                 </Link>
                 <Link
-                  href="https://www.youtube.com"
+                  href="https://www.youtube.com/channel/UCflNnm0U1MZNv-_qNbrpPDQ"
                   target="_blank"
                   aria-label="YouTube"
                 >
                   <Youtube className="h-6 w-6 hover:text-red-600 transition-transform transform hover:scale-110" />
                 </Link>
                 <Link
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/inofinityrnd/"
                   target="_blank"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-6 w-6 hover:text-pink-500 transition-transform transform hover:scale-110" />
                 </Link>
                 <Link
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/inofinity-rnd-pvt-ltd/"
                   target="_blank"
                   aria-label="LinkedIn"
                 >
@@ -273,15 +273,15 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
                     </Link>
                   </div>
                   <div className="pl-14">
-                    <Link href="tel:+918249634803" className="hover:text-white">
-                      +91 8249634803
+                    <Link href="tel:+919439667800" className="hover:text-white">
+                      +91 9439667800
                     </Link>
                   </div>
                 </li>
                 <li>
                   <span className="hover:text-white">
-                    Address: O-HUB (Startup Odisha), Chandaka Industrial Estate,
-                    Bhubaneswar
+                    Address: SAI PARADISE-DUPLEX-95, Daruthenga, KISS Rd,
+                    Chandaka Industrial Estate, Patia, Bhubaneswar
                   </span>
                 </li>
               </ul>
