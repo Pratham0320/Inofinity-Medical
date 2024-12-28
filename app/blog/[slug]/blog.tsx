@@ -84,7 +84,7 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
           <h1 className="text-5xl sm:text-7xl font-bold text-white drop-shadow-md leading-tight">
             {blog.title}
           </h1>
-          <p className="mt-4 text-lg text-gray-300">Published on {blog.date}</p>
+          <p className="mt-4 text-lg text-white">Published on {blog.date}</p>
         </div>
       </div>
 
