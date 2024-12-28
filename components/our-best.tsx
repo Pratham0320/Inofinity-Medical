@@ -1,7 +1,15 @@
+/** @format */
+
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+
+type Achievement = {
+  imagePath: string; // URL of the image
+  title: string; // Title or tagline of the achievement
+  position: "left" | "center" | "right"; // Position in the grid
+};
 
 export function OurBest() {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,6 +18,7 @@ export function OurBest() {
     y: 50,
   });
   const sectionRef = useRef<HTMLElement>(null);
+  const [achievements, setAchievements] = useState<Achievement[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,6 +47,28 @@ export function OurBest() {
     };
   }, []);
 
+  useEffect(() => {
+    async function fetchAchievements() {
+      try {
+        const response = await fetch("/api/our-best");
+        const data = await response.json();
+        if (Array.isArray(data.items)) {
+          // Map API response to the expected structure
+          setAchievements(
+            data.items.map((item: any, index: any) => ({
+              imagePath: item.url,
+              title: item.tagline,
+              position: ["left", "center", "right"][index % 3], // Cycle through positions
+            }))
+          );
+        }
+      } catch (error) {
+        console.error("Error fetching achievements:", error);
+      }
+    }
+    fetchAchievements();
+  }, []);
+
   const handleMouseMove = (event: React.MouseEvent) => {
     const { clientX, clientY } = event;
     const { innerWidth, innerHeight } = window;
@@ -45,54 +76,6 @@ export function OurBest() {
     const y = (clientY / innerHeight) * 100;
     setBackgroundPosition({ x, y });
   };
-
-  const achievements = [
-    {
-      imagePath: "/images/Our-Best/NIRMAN-FELICITATION.jpg",
-      title: "NIRMAN FELICITATION",
-      position: "left",
-    },
-    {
-      imagePath: "/images/Our-Best/INOFINITYRND-IMMT-FELICITATION.jpg",
-      title: "INOFINITYRND IMMT FELICITATION",
-      position: "center",
-    },
-    {
-      imagePath: "/images/Our-Best/IMMT-CSIR.jpg",
-      title: "IMMT CSIR",
-      position: "right",
-    },
-    {
-      imagePath: "/images/Our-Best/WHO-innovation-head-Louise-Agarsnap.jpg",
-      title: "WHO GLOBAL MEDICAL INNOVATION CENTER AT INDIA",
-      position: "left",
-    },
-    {
-      imagePath: "/images/Our-Best/INOFINITYRND-TATA-IIM-TSEC-768x927.jpg",
-      title: "TSEC SOCIAL ENTREPRENEURSHIP SUMMIT 2021-2022",
-      position: "center",
-    },
-    {
-      imagePath: "/images/Our-Best/cmo_odisha.jpg",
-      title: "INTERACTION WITH HONOURABLE CM OF ODISHA",
-      position: "right",
-    },
-    {
-      imagePath: "/images/Our-Best/Dr-Manish-Diwan-BIRAC-str-head.jpg",
-      title: "Dr Manish Diwan BIRAC STR HEAD",
-      position: "left",
-    },
-    {
-      imagePath: "/images/Our-Best/INOFINITYRND-WTO-BBSR-e1658063425337.jpg",
-      title: "INOFINITYRND WTO BBSR",
-      position: "center",
-    },
-    {
-      imagePath: "/images/Our-Best/BIRAC-STR-HEAD-e1658063092503.jpg",
-      title: "Dr Manish Diwan BIRAC STR HEAD",
-      position: "right",
-    },
-  ];
 
   return (
     <section
