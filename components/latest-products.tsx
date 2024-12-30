@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 export function LatestProducts() {
   const [currentProduct, setCurrentProduct] = useState(0);
-  const products = ["Kalamscope...", "Sanjivani  QCPR..."];
+  const products = ["Kalamscope...", "Sanjivani QCPR..."];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -67,7 +67,7 @@ export function LatestProducts() {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="text-white text-5xl md:text-7xl font-bold"
+                className="text-white text-4xl md:text-7xl font-bold break-words whitespace-pre-wrap leading-snug text-center"
               >
                 {products[currentProduct].split("").map((letter, index) => (
                   <motion.span

@@ -70,7 +70,7 @@ export function YouTubeSection() {
         </h2>
 
         {/* Center-Aligned Video with 75% Width */}
-        <div className="w-3/4 mx-auto">
+        <div className="w-full sm:w-3/4 mx-auto">
           <iframe
             src="https://www.youtube.com/embed/Z-5FDZpvRtY"
             frameBorder="0"
@@ -85,18 +85,18 @@ export function YouTubeSection() {
           <h3 className="text-3xl font-bold mb-4 text-white">
             Sanjivani QCPR Training & Process
           </h3>
-          <p className="text-gray-200 text-lg leading-relaxed font-light" style={{ textAlign: 'justify' }}>
+          <p
+            className="text-gray-200 text-lg leading-relaxed font-light"
+            style={{ textAlign: "justify" }}
+          >
             About 90% of cardiac arrests occur outside hospitals, making
             immediate action crucial. A victim’s brain begins to suffer
             permanent damage within 6 minutes of cardiac arrest, and survival
             rates drop below 10% even when taken to a hospital. However, a
             bystander performing CPR with chest compressions at 100 per minute
             can sustain vital blood flow until emergency help arrives. CPR is a
-            simple 
-          </p>
-          <p className="text-gray-200 text-lg leading-relaxed font-light" style={{ textAlign: 'center' }}>
-          yet life-saving skill that everyone should learn to make a
-          difference in critical moments.
+            simple yet life-saving skill that everyone should learn to make a
+            difference in critical moments.
           </p>
           <div className="mt-8">
             <a
