@@ -64,52 +64,49 @@ export function YouTubeSection() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-32 relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white relative inline-block">
+      <div className="max-w-full mx-auto px-4 py-32 relative z-10">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
           Watch Our Latest Video
         </h2>
-        <div className="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-8">
-          <div className="flex justify-center lg:w-1/2">
-            <iframe
-              src="https://www.youtube.com/embed/Z-5FDZpvRtY"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full aspect-video max-w-3xl rounded-lg shadow-xl"
-            ></iframe>
-          </div>
 
-          <div
-            ref={textRef}
-            className={`w-full lg:w-1/2 mt-8 lg:mt-0 transition-opacity duration-1000 ease-in-out transform ${
-              isVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 translate-x-20"
-            }`}
-          >
-            <h3 className="text-2xl font-extrabold mb-4 text-white font-serif">
-              Did You Know?
-            </h3>
-            <p className="text-gray-200 text-lg leading-relaxed mb-6 font-roboto">
-              About 90% of cardiac arrests occur outside the hospital, and a
-              victim's brain suffers permanent damage after 6 minutes of cardiac
-              arrest. Only less than 10% of victims survive if taken to a
-              hospital.
-              <br />
-              <br />A bystander can give CPR, chest compressions at 100 per
-              minute, until emergency medical help arrives. CPR is a life-saving
-              skill.
-            </p>
-            <div className="mt-8 text-center">
-              <a
-                href="https://www.youtube.com/channel/UCflNnm0U1MZNv-_qNbrpPDQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-800"
-              >
-                See More
-              </a>
-            </div>
+        {/* Center-Aligned Video with 75% Width */}
+        <div className="w-3/4 mx-auto">
+          <iframe
+            src="https://www.youtube.com/embed/Z-5FDZpvRtY"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full aspect-video rounded-lg shadow-xl"
+          ></iframe>
+        </div>
+
+        {/* Description Below the Video */}
+        <div className="w-3/4 mx-auto mt-8 text-center">
+          <h3 className="text-3xl font-bold mb-4 text-white">
+            Sanjivani QCPR Training & Process
+          </h3>
+          <p className="text-gray-200 text-lg leading-relaxed font-light" style={{ textAlign: 'justify' }}>
+            About 90% of cardiac arrests occur outside hospitals, making
+            immediate action crucial. A victim’s brain begins to suffer
+            permanent damage within 6 minutes of cardiac arrest, and survival
+            rates drop below 10% even when taken to a hospital. However, a
+            bystander performing CPR with chest compressions at 100 per minute
+            can sustain vital blood flow until emergency help arrives. CPR is a
+            simple 
+          </p>
+          <p className="text-gray-200 text-lg leading-relaxed font-light" style={{ textAlign: 'center' }}>
+          yet life-saving skill that everyone should learn to make a
+          difference in critical moments.
+          </p>
+          <div className="mt-8">
+            <a
+              href="https://www.youtube.com/channel/UCflNnm0U1MZNv-_qNbrpPDQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-800"
+            >
+              See More
+            </a>
           </div>
         </div>
       </div>

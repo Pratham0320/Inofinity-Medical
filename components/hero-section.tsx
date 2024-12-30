@@ -7,8 +7,8 @@ import { KioskModal } from "./kiosk-modal";
 export function HeroSection() {
   const [currentText, setCurrentText] = useState(0);
   const texts = [
-    "DONATE  A  KIOSK  TO  SOCIETY ...",
-    "TRAIN  YOUR  HANDS  TO  SAVE  A  LIFE ...",
+    "DONATE A KIOSK TO SOCIETY ...",
+    "TRAIN YOUR HANDS TO SAVE A LIFE ...",
   ];
   const [currentImage, setCurrentImage] = useState(0);
   const [isKioskModalOpen, setIsKioskModalOpen] = useState(false);
@@ -129,18 +129,21 @@ export function HeroSection() {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="text-xl md:text-3xl text-gray-300 font-light"
+                className="text-xl md:text-3xl text-gray-300 font-light hero-text"
               >
-                {texts[currentText].split("").map((letter, index) => (
-                  <motion.span
-                    key={index}
-                    variants={letterVariants}
-                    style={{ display: "inline-block" }}
-                    className="mr-[0.2em]"
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
+                {texts[currentText].split(" ").map((word, wordIndex) => (
+        <span key={wordIndex} style={{ display: "inline-block", marginRight: "0.5em" }}>
+          {word.split("").map((letter, letterIndex) => (
+            <motion.span
+              key={letterIndex}
+              variants={letterVariants}
+              style={{ display: "inline-block" }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </span>
+      ))}
               </motion.div>
             </AnimatePresence>
           </div>

@@ -68,7 +68,7 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
             alt={blog.title}
             layout="fill"
             objectFit="cover"
-            objectPosition= "top"
+            objectPosition="top"
           />
         </div>
 
@@ -80,11 +80,14 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
           className={`absolute top-1/3 transform ${
             textVisible ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-700 ease-in-out px-8 lg:px-16`}
+          style={{ width: "100%", padding: "1rem" }} // Ensure full width and spacing
         >
-          <h1 className="text-5xl sm:text-7xl font-bold text-white drop-shadow-md leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-bold text-white drop-shadow-md leading-tight md:leading-snug">
             {blog.title}
           </h1>
-          <p className="mt-4 text-lg text-white">Published on {blog.date}</p>
+          <p className="mt-4 text-sm sm:text-lg text-white">
+            Published on {blog.date}
+          </p>
         </div>
       </div>
 
@@ -92,7 +95,10 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
       <div className="container mx-auto px-6 lg:px-24 py-16">
         <article className="bg-white p-12 rounded-xl shadow-lg border border-gray-200 max-w-4xl mx-auto">
           {/* Blog Content */}
-          <div className="prose lg:prose-xl prose-blue mx-auto text-gray-800 leading-relaxed" style={{ textAlign: 'justify' }}>
+          <div
+            className="prose lg:prose-xl prose-blue mx-auto text-gray-800 leading-relaxed"
+            style={{ textAlign: "justify" }}
+          >
             {/* Markdown content */}
             <Markdown>{blog.content}</Markdown>
           </div>
