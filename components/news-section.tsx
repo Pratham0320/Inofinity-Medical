@@ -91,6 +91,15 @@ export function NewsSection() {
             </div>
           ))}
         </div>
+        {/* Button to See More Blogs */}
+        <div className="mt-12 text-center">
+          <a
+            href="/blog"
+            className="inline-block px-6 py-2 bg-white text-black font-medium rounded-md shadow-md hover:bg-white transition-all duration-300 transform hover:scale-105"
+          >
+            See More
+          </a>
+        </div>
       </div>
     </section>
   );
