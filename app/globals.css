@@ -92,10 +92,10 @@ svg {
 }
 
 .hero-text {
-  word-wrap: break-word; 
-  word-break: break-word; 
-  overflow-wrap: break-word; 
-  white-space: normal; 
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .responsive-image {

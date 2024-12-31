@@ -191,7 +191,8 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Stay informed about the latest advancements and breakthroughs of Inofinity RnD.
+              Stay informed about the latest advancements and breakthroughs of
+              Inofinity RnD.
             </motion.p>
           </div>
         </div>

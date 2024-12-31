@@ -16,7 +16,10 @@ function generateSlug(title: string) {
 
 export async function GET() {
   try {
-    const { data, error } = await supabase.from("blogs").select("*");
+    const { data, error } = await supabase
+      .from("blogs")
+      .select("*")
+      .order("date", { ascending: false });
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
