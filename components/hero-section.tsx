@@ -132,18 +132,21 @@ export function HeroSection() {
                 className="text-xl md:text-3xl text-gray-300 font-light hero-text"
               >
                 {texts[currentText].split(" ").map((word, wordIndex) => (
-        <span key={wordIndex} style={{ display: "inline-block", marginRight: "0.5em" }}>
-          {word.split("").map((letter, letterIndex) => (
-            <motion.span
-              key={letterIndex}
-              variants={letterVariants}
-              style={{ display: "inline-block" }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </span>
-      ))}
+                  <span
+                    key={wordIndex}
+                    style={{ display: "inline-block", marginRight: "0.5em" }}
+                  >
+                    {word.split("").map((letter, letterIndex) => (
+                      <motion.span
+                        key={letterIndex}
+                        variants={letterVariants}
+                        style={{ display: "inline-block" }}
+                      >
+                        {letter}
+                      </motion.span>
+                    ))}
+                  </span>
+                ))}
               </motion.div>
             </AnimatePresence>
           </div>
