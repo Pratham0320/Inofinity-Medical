@@ -119,7 +119,7 @@ export function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li>
                 <Link
-                  href="https://inofinityrnd.com/blog/"
+                  href="/blog"
                   target="_blank"
                   className="hover:text-gray-300 transition-colors"
                 >
@@ -128,7 +128,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://inofinityrnd.com/blog/"
+                  href="/blog"
                   target="_blank"
                   className="hover:text-gray-300 transition-colors"
                 >
