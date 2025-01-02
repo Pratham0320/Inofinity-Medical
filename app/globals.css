@@ -17,19 +17,19 @@ body {
 
 h1, .hero-title {
   font-family: "Playfair Display", serif;
-  font-weight: 700; /* Bold for impactful titles */
+  font-weight: 700; 
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
   color: #ffffff;
 }
 
 h2, p, .hero-subtitle {
   font-family: "Playfair Display", serif;
-  font-weight: 400; /* Regular weight for subtler text */
+  font-weight: 400; 
 }
 
 .hero-highlight {
-  color: #0077b6; /* Theme’s primary blue */
-  font-weight: 600; /* Semi-bold for emphasis */
+  color: #0077b6; 
+  font-weight: 600; 
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -71,7 +71,7 @@ svg {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* Push behind content */
+  z-index: -1; 
 }
 
 .wave {
@@ -119,10 +119,9 @@ svg {
 }
 
 .responsive-image {
-  width: 100%; /* Makes the image span the full width */
-  height: auto; /* Maintains the aspect ratio */
-  object-fit: cover; /* Ensures no distortion and covers the container */
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
 }
 
-/* In styles/globals.css */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
