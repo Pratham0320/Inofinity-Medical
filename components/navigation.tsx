@@ -69,15 +69,18 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo_PNG.png"
-              alt="Inofinity Logo"
-              width={isScrolled?194:251}
-              height={isScrolled?54:70}
-              className="h-auto transition-all duration-300"
-              priority
-            />
+          <Link href="/" className="relative flex items-center">
+            <div
+              className={`relative transform transition-transform ${
+                isScrolled ? "w-28 h-auto" : "w-40 h-auto"
+              } hover:scale-105`}
+            >
+              <img
+                src="/images/logo.png"
+                alt="Inofinity Logo"
+                className="object-contain w-full h-full"
+              />
+            </div>
           </Link>
 
           <motion.div
