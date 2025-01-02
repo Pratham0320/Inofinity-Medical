@@ -8,12 +8,12 @@ export const metadata = {
   title: "Inofinity",
   description: "Advanced medical solutions and technologies",
   icons: {
-    icon: "/images/logo.jpeg",
-    shortcut: "/images/logo.jpeg",
-    apple: "/images/logo.jpeg",
+    icon: "/images/logo.jpg",
+    shortcut: "/images/logo.jpg",
+    apple: "/images/logo.jpg",
     other: {
       rel: "apple-touch-icon-precomposed",
-      url: "/images/logo.jpeg",
+      url: "/images/logo.jpg",
     },
   },
 };
