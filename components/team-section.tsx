@@ -10,7 +10,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "DR. ASHOK KUMAR BADAMALI",
     role: "Founder",
-    image: "/images/Team_Members/team-image-1.jpeg",
+    image: "/images/Team_Members/team-image-1.jpg",
   },
   {
     name: "MRS. NIBEDITA THANAPATI",
