@@ -56,7 +56,6 @@ export function Navigation() {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
   };
-
   return (
     <motion.nav
       variants={navVariants}
@@ -74,8 +73,8 @@ export function Navigation() {
             <Image
               src="/images/logo_PNG.png"
               alt="Inofinity Logo"
-              width={isScrolled ? 144 : 192}
-              height={isScrolled ? 48 : 64}
+              width={isScrolled?194:242}
+              height={isScrolled?54:70}
               className="h-auto transition-all duration-300"
               priority
             />
