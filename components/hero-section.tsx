@@ -58,26 +58,6 @@ export function HeroSection() {
     exit: { x: "-100%", opacity: 0, transition: { duration: 1 } },
   };
 
-  const containerVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { staggerChildren: 0.1 } },
-    exit: { opacity: 0, transition: { duration: 0.5 } },
-  };
-
-  const letterVariants = {
-    initial: { opacity: 0, y: 50 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", damping: 10, stiffness: 100 },
-    },
-    exit: {
-      opacity: 0,
-      y: -50,
-      transition: { duration: 0.2 },
-    },
-  };
-
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image Animation */}
@@ -106,17 +86,21 @@ export function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-xl md:text-2xl text-blue-200 mb-4 font-light"
+            transition={{ duration: 0.8 }}
+            className="text-lg md:text-2xl text-gray-300 mt-4 hero-subtitle "
           >
-            Advancing Healthcare Technology
+            ADVANCING HEALTHCARE TECHNOLOGY
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold text-white mb-8"
+            transition={{ duration: 0.6 }}
+            className="text-6xl md:text-9xl font-extrabold text-white hero-title"
+            style={{
+              textShadow:
+                "0px 4px 10px rgba(0, 0, 0, 0.8), 0px 0px 20px #0077b6",
+            }}
           >
             INOFINITY
           </motion.h1>
@@ -125,28 +109,13 @@ export function HeroSection() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentText}
-                variants={containerVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                className="text-xl md:text-3xl text-gray-300 font-light hero-text"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.6 }}
+                className="text-xl md:text-2xl text-gray-300 font-light mt-4 hero-subtitle"
               >
-                {texts[currentText].split(" ").map((word, wordIndex) => (
-                  <span
-                    key={wordIndex}
-                    style={{ display: "inline-block", marginRight: "0.5em" }}
-                  >
-                    {word.split("").map((letter, letterIndex) => (
-                      <motion.span
-                        key={letterIndex}
-                        variants={letterVariants}
-                        style={{ display: "inline-block" }}
-                      >
-                        {letter}
-                      </motion.span>
-                    ))}
-                  </span>
-                ))}
+                {texts[currentText]}
               </motion.div>
             </AnimatePresence>
           </div>

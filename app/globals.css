@@ -9,10 +9,30 @@
   --primary-foreground: 210 40% 98%;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Playfair Display", serif;
 }
+
+h1, .hero-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700; /* Bold for impactful titles */
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+}
+
+h2, p, .hero-subtitle {
+  font-family: "Playfair Display", serif;
+  font-weight: 400; /* Regular weight for subtler text */
+}
+
+.hero-highlight {
+  color: #0077b6; /* Theme’s primary blue */
+  font-weight: 600; /* Semi-bold for emphasis */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
 
 @keyframes fadeInUp {
   from {
