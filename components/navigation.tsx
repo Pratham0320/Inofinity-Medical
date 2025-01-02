@@ -73,7 +73,7 @@ export function Navigation() {
             <Image
               src="/images/logo_PNG.png"
               alt="Inofinity Logo"
-              width={isScrolled?194:242}
+              width={isScrolled?194:251}
               height={isScrolled?54:70}
               className="h-auto transition-all duration-300"
               priority
