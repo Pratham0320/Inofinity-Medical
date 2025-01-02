@@ -71,7 +71,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-full">
           <Link href="/" className="relative flex items-center">
             <div
-              className={`relative transform transition-transform ${
+              className={`relative transform transition-all duration-500 ease-in-out ${
                 isScrolled ? "w-28 h-auto" : "w-40 h-auto"
               } hover:scale-105`}
             >
