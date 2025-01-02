@@ -37,7 +37,7 @@ export default function Dashboard({ userRole }: { userRole: string }) {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
+      <h1 className="text-3xl font-bold mb-4 text-black">Dashboard</h1>
       <div className="tabs space-x-4">
         {tabs.map((tab) => (
           <Button
