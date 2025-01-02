@@ -54,7 +54,17 @@ export default function TeamSection() {
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="rounded-full object-cover shadow-lg"
+                  className={`rounded-full object-cover shadow-lg ${
+                    member.name === "DR. ASHOK KUMAR BADAMALI"
+                      ? "object-top"
+                      : ""
+                  }`}
+                  style={{
+                    objectPosition:
+                      member.name === "DR. ASHOK KUMAR BADAMALI"
+                        ? "50% 20%"
+                        : "center",
+                  }}
                 />
               </div>
               <h3 className="text-xl font-medium text-gray-100 mb-2">
