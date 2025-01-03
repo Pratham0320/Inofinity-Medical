@@ -23,17 +23,17 @@ const teamMembers: TeamMember[] = [
     image: "/images/Team_Members/team-image-3.jpeg",
   },
   {
-    name: "Mr MANAS BEHERA",
+    name: "MR. MANAS BEHERA",
     role: "Overseas Business Development Partner",
     image: "/images/Team_Members/team-image-4.jpeg",
   },
   {
-    name: "Mr SOUMYA RANJAN ROUT",
+    name: "MR. SOUMYA RANJAN ROUT",
     role: "Electronics and Robotics Expert",
     image: "/images/Team_Members/team-image-5.jpeg",
   },
   {
-    name: "Mr PRASANA SAHOO",
+    name: "MR. PRASANA SAHOO",
     role: "R&D Manager",
     image: "/images/Team_Members/team-image-6.jpg",
   },
@@ -43,7 +43,7 @@ export default function TeamSection() {
   return (
     <div className="bg-[#1e293b] w-full">
       <section className="py-12 px-4 mx-auto">
-        <h2 className="text-4xl font-medium text-center text-gray-100 mb-16">
+        <h2 className="text-5xl text-center text-gray-100 mb-16">
           Our Team
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-12">
@@ -67,7 +67,7 @@ export default function TeamSection() {
                   }}
                 />
               </div>
-              <h3 className="text-xl font-medium text-gray-100 mb-2">
+              <h3 className="text-xl font-medium text-gray-100 mb-2 hero-subtitle">
                 {member.name}
               </h3>
               <p className="text-gray-400">{member.role}</p>

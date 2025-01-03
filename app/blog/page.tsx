@@ -122,15 +122,18 @@ export default function BlogPage() {
         }`}
       >
         <div className="container mx-auto px-4 h-full flex items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo_PNG.png"
-              alt="Inofinity Logo"
-              width={isScrolled ? 144 : 192}
-              height={isScrolled ? 48 : 64}
-              className="h-auto transition-all duration-300"
-              priority
-            />
+          <Link href="/" className="relative flex items-center">
+            <div
+              className={`relative transform transition-all duration-500 ease-in-out ${
+                isScrolled ? "w-28 h-auto" : "w-40 h-auto"
+              } hover:scale-105`}
+            >
+              <img
+                src="/images/logo.png"
+                alt="Inofinity Logo"
+                className="object-contain w-full h-full"
+              />
+            </div>
           </Link>
           <div className="flex items-center">
             <motion.div
@@ -186,7 +189,7 @@ export default function BlogPage() {
               Latest Insights in Inofinity's Medical Technology
             </motion.h1>
             <motion.p
-              className="mb-8 text-lg text-gray-200 sm:text-xl"
+              className="mb-8 text-2xl text-gray-200 sm:text-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -201,7 +204,7 @@ export default function BlogPage() {
       {/* Blog Posts Section */}
       <section className="py-16 sm:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
+          <h2 className="text-5xl font-extrabold text-center mb-16 text-gray-900">
             Our Latest Blogs
           </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

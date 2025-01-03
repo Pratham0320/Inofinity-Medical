@@ -82,7 +82,7 @@ export function YouTubeSection() {
 
         {/* Description Below the Video */}
         <div className="w-3/4 mx-auto mt-8 text-center">
-          <h3 className="text-3xl font-bold mb-4 text-white">
+          <h3 className="text-3xl font-bold mb-4 text-white hero-title">
             Sanjivani QCPR Training & Process
           </h3>
           <p

@@ -53,23 +53,6 @@ export function SectionTransition() {
           <h2 className="text-4xl md:text-6xl font-light tracking-[0.2em] text-white mb-4">
             OUR LATEST PRODUCTS
           </h2>
-          <div className="flex justify-center gap-2">
-            {[...Array(3)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="w-3 h-3 rounded-full bg-blue-400"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  delay: i * 0.3,
-                  repeat: Infinity,
-                }}
-              />
-            ))}
-          </div>
         </motion.div>
       </div>
 

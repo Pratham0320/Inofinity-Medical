@@ -110,7 +110,7 @@ export function FeaturesSection() {
               >
                 <feature.icon className="h-20 w-20 text-[#1d417b] group-hover:text-yellow-400 transition-colors duration-300" />
               </motion.div>
-              <h3 className="text-2xl font-semibold text-white mb-4 tracking-wide">
+              <h3 className="text-3xl font-bold text-white mb-4 tracking-wide hero-subtitle">
                 {feature.title}
               </h3>
               <p className="text-gray-200 text-center tracking-wider leading-relaxed">

@@ -5,7 +5,7 @@ export function GetInTouch() {
   return (
     <section id="get-in-touch" className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 md:mb-12 -mt-16 md:-mt-20 pt-16 md:pt-20">
+        <h2 className="text-4xl font-bold text-center mb-8 md:mb-12 -mt-16 md:-mt-20 pt-16 md:pt-20">
           Get in Touch
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

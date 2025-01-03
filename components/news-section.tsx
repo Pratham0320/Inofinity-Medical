@@ -67,10 +67,10 @@ export function NewsSection() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-4 line-clamp-2">
+                <h3 className="text-2xl font-semibold text-white mb-4 line-clamp-2 hero-subtitle">
                   {item.title}
                 </h3>
-                <p className="text-zinc-400 mb-6 line-clamp-3">
+                <p className="text-zinc-400 text-xl mb-6 line-clamp-3">
                   {item.description}
                 </p>
                 <Button

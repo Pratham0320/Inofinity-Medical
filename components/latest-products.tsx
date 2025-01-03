@@ -67,7 +67,7 @@ export function LatestProducts() {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="text-white text-4xl md:text-7xl font-bold break-words whitespace-pre-wrap leading-snug text-center"
+                className="text-white text-4xl md:text-7xl font-bold break-words whitespace-pre-wrap leading-snug text-center hero-subtitle"
               >
                 {products[currentProduct].split("").map((letter, index) => (
                   <motion.span

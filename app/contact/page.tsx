@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Facebook, Twitter, Youtube, Instagram, Linkedin } from "lucide-react";
 import { MdEmail, MdPerson, MdMessage } from "react-icons/md";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
@@ -22,10 +23,32 @@ export default function Contact() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <h1 className="text-white text-5xl font-extrabold tracking-wide leading-snug text-center">
-            Every <span className="text-red-500">life matters</span>, <br />{" "}
-            innovation in healthcare
-          </h1>
+          <div className="hidden lg:block text-center">
+            <motion.h1
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="text-white font-extrabold tracking-wide leading-snug text-4xl sm:text-5xl lg:text-6xl"
+            >
+              Every <span className="text-red-500">life matters</span>
+            </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="text-white font-extrabold tracking-wide leading-snug mt-4 text-4xl sm:text-5xl lg:text-6xl"
+            >
+              Innovation in healthcare
+            </motion.h1>
+          </div>
+
+          {/* For smaller screens (no animation) */}
+          <div className="block lg:hidden text-center">
+            <h1 className="text-white text-6xl font-extrabold tracking-wide leading-snug">
+              Every <span className="text-red-500">life matters</span>, <br />{" "}
+              innovation in healthcare
+            </h1>
+          </div>
         </div>
       </div>
 
@@ -48,7 +71,12 @@ export default function Contact() {
 
       {/* Contact Section */}
       <div className="py-16 px-6 max-w-screen-xl mx-auto">
-        <h1 className="text-5xl font-bold text-center text-gray-800 mb-6">
+        <h1
+          className="text-6xl font-bold text-center text-gray-800 mb-6"
+          style={{
+            textShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)", // Adjust shadow properties
+          }}
+        >
           Contact Us
         </h1>
         <p className="text-lg text-center text-gray-600 mb-12">

@@ -96,8 +96,12 @@ export default function BlogPage({ blog }: { blog: Record<string, any> }) {
         <article className="bg-white p-12 rounded-xl shadow-lg border border-gray-200 max-w-4xl mx-auto">
           {/* Blog Content */}
           <div
-            className="prose lg:prose-xl prose-blue mx-auto text-gray-800 leading-relaxed"
-            style={{ textAlign: "justify" }}
+            className="prose lg:prose-lg prose-blue mx-auto text-black leading-relaxed"
+            style={{
+              textAlign: "justify",
+              fontSize: "1.1rem",
+              lineHeight: "1.8",
+            }}
           >
             {/* Markdown content */}
             <Markdown>{blog.content}</Markdown>

@@ -51,15 +51,18 @@ export function ContactNavigation() {
       }`}
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/images/logo_PNG.png"
-            alt="Inofinity Logo"
-            width={isScrolled ? 144 : 192}
-            height={isScrolled ? 48 : 64}
-            className="h-auto transition-all duration-300"
-            priority
-          />
+        <Link href="/" className="relative flex items-center">
+          <div
+            className={`relative transform transition-all duration-500 ease-in-out ${
+              isScrolled ? "w-28 h-auto" : "w-40 h-auto"
+            } hover:scale-105`}
+          >
+            <img
+              src="/images/logo.png"
+              alt="Inofinity Logo"
+              className="object-contain w-full h-full"
+            />
+          </div>
         </Link>
         <div className="flex items-center">
           <motion.div
