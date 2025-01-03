@@ -15,6 +15,15 @@ export function HeroSection() {
   const [backgroundImages, setBackgroundImages] = useState<string[]>([]);
 
   useEffect(() => {
+    if (backgroundImages.length > 0) {
+      backgroundImages.forEach((image) => {
+        const img = new Image();
+        img.src = image;
+      });
+    }
+  }, [backgroundImages]);
+
+  useEffect(() => {
     async function fetchImages() {
       try {
         const response = await fetch("/api/hero");
