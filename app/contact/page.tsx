@@ -44,7 +44,7 @@ export default function Contact() {
 
           {/* For smaller screens (no animation) */}
           <div className="block lg:hidden text-center">
-            <h1 className="text-white text-6xl font-extrabold tracking-wide leading-snug">
+            <h1 className="text-white text-5xl font-extrabold tracking-wide leading-snug">
               Every <span className="text-red-500">life matters</span>, <br />{" "}
               innovation in healthcare
             </h1>
