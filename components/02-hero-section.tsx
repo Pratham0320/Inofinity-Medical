@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { KioskModal } from "./kiosk-modal";
+import { X } from "lucide-react";
 
 export function HeroSection() {
   const [currentText, setCurrentText] = useState(0);
   const texts = [
-    "DONATE A KIOSK TO SOCIETY ...",
+    "DONATE A SANJIVANI QCPR TO SOCIETY ...",
     "TRAIN YOUR HANDS TO SAVE A LIFE ...",
   ];
   const [currentImage, setCurrentImage] = useState(0);
@@ -148,7 +148,7 @@ export function HeroSection() {
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-800 font-bold text-lg px-10 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
               style={{ borderRadius: "50px", width: "fit-content" }}
             >
-              ABOUT KIOSK
+              ABOUT SANJIVANI QCPR
             </button>
           </motion.div>
         </div>
@@ -181,10 +181,99 @@ export function HeroSection() {
         </svg>
       </div>
 
-      <KioskModal
-        isOpen={isKioskModalOpen}
-        onClose={() => setIsKioskModalOpen(false)}
-      />
+      {/* Sanjivani QCPR */}
+      <AnimatePresence>
+        {isKioskModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsKioskModalOpen(false)}
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 15 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl relative"
+            >
+              <button
+                onClick={() => setIsKioskModalOpen(false)}
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              >
+                <X size={24} />
+              </button>
+              <h2 className="text-3xl font-bold mb-4 text-gray-800">
+                SanjivaniQCPR
+              </h2>
+              <div className="prose max-w-none">
+                <p className="italic text-lg font-semibold text-gray-900 hero-subtitle">
+                  SanjivaniQCPR is an ergonomically designed & patented CPR
+                  assist device for resuscitation of cardiac arrest victims by
+                  common men.
+                </p>
+                <h3 className="text-xl font-bold text-red-600 mt-6 hero-subtitle">
+                  Problem-
+                </h3>
+                <p>
+                  <span className="font-semibold text-red-600 hero-subtitle">
+                    Sudden Cardiac Arrest (SCA)
+                  </span>{" "}
+                  is the sudden cessation of the heart’s pumping activity with
+                  hemodynamic collapse. About{" "}
+                  <span className="font-bold">90%</span> of{" "}
+                  <span className="font-bold">SCA</span> happens either at home
+                  or the workplace with a survival rate of less than{" "}
+                  <span className="font-bold">10%</span>.
+                </p>
+                <ul className="list-disc ml-6 mt-2">
+                  <li>
+                    The survival rate can be doubled or tripled if
+                    cardiopulmonary resuscitation (CPR) is initiated early by a
+                    bystander or EMS.
+                  </li>
+                  <li>
+                    The EMS service density, traffic congestion, and large
+                    population in India are hindrances to early CPR.
+                  </li>
+                  <li>
+                    Victims' brains suffer irreversible damage after 6 minutes
+                    of cardiac arrest precisely.
+                  </li>
+                </ul>
+                <h3 className="text-xl font-bold text-blue-600 mt-6 hero-subtitle">
+                  Solution-
+                </h3>
+                <p>
+                  Ergonomically designed handheld gadget with audiovisual
+                  feedback in regional Indian languages facilitates common men
+                  in providing{" "}
+                  <span className="font-bold text-blue-600">
+                    High Quality Chest Compression
+                  </span>{" "}
+                  to victims of cardiac arrest before the arrival of an
+                  emergency medical team, so that the outcome is better.
+                </p>
+                <p>
+                  The feedbacks are:{" "}
+                  <span className="italic text-gray-700">
+                    “Good Job, Match with beep, Compress more, Release more”{" "}
+                  </span>
+                  — ensuring the rate of compression is 100/min, depth is 5cm,
+                  and complete recoil according to the norms of the Basic Life
+                  Support Guidelines (BLS-2020) of the American Heart
+                  Association (AHA).
+                </p>
+                <p className="text-xl font-bold text-green-600 mt-6">
+                  DONATE a Sanjivani to your society and be a lifesaver.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

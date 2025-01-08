@@ -1,15 +1,13 @@
-import { Navigation } from "@/components/navigation";
-import { HeroSection } from "@/components/hero-section";
-import { FeaturesSection } from "@/components/features-section";
-import { SectionTransition } from "@/components/section-transition";
-import { LatestProducts } from "@/components/latest-products";
-import { YouTubeSection } from "@/components/youtube-section";
-import { OurBest } from "@/components/our-best";
-import { NewsSection } from "@/components/news-section";
-import { GetInTouch } from "@/components/get-in-touch";
-import { Footer } from "@/components/footer";
-import TeamSection from "@/components/team-section";
-// import { TestimonialsSection } from '@/components/testimonials-section'
+import { Navigation } from "@/components/01-navigation";
+import { HeroSection } from "@/components/02-hero-section";
+import { FeaturesSection } from "@/components/03-features-section";
+import { LatestProducts } from "@/components/04-latest-products";
+import { YouTubeSection } from "@/components/05-youtube-section";
+import { OurBest } from "@/components/06-our-best";
+import { NewsSection } from "@/components/07-news-section";
+import TeamSection from "@/components/08-team-section";
+import { GetInTouch } from "@/components/09-get-in-touch";
+import { Footer } from "@/components/10-footer";
 
 export default function Home() {
   return (
@@ -19,7 +17,6 @@ export default function Home() {
       <section id="features">
         <FeaturesSection />
       </section>
-      <SectionTransition />
       <section id="products">
         <LatestProducts />
       </section>
@@ -29,9 +26,6 @@ export default function Home() {
       <section id="team">
         <TeamSection />
       </section>
-      {/* <section id="testimonials">
-        <TestimonialsSection />
-      </section> */}
       <section id="about">
         <GetInTouch />
       </section>
