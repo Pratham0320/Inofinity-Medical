@@ -169,7 +169,7 @@ export default function BlogPage() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative h-[40vh] min-h-[400px] w-full">
+      <section className="relative h-[40vh] min-h-[400px] w-full pt-20">
         <Image
           src="/images/Blog/hero.png"
           alt="Hero Image"
@@ -178,7 +178,7 @@ export default function BlogPage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent" />
-        <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+        <div className="absolute inset-0 flex items-center justify-center text-center text-white z-10">
           <div className="container px-4">
             <motion.h1
               className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
