@@ -8,14 +8,13 @@ import AdminTab from "./(tabs)/AdminTab";
 
 export default function Dashboard({ userRole }: { userRole: string }) {
   const [activeTab, setActiveTab] = useState<
-    "blog" | "image" | "product" | "admin"
+    "blog" | "image" | "admin"
   >("blog");
   console.log(userRole);
 
   const tabs = [
     { key: "blog", label: "Add Blog" },
     { key: "image", label: "Image Add (Redis)" },
-    { key: "product", label: "Add Product" },
   ];
 
   if (userRole === "superadmin") {
