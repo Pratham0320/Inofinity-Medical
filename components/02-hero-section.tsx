@@ -196,15 +196,21 @@ export function HeroSection() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 15 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl relative"
+              onClick={(e) => e.stopPropagation()} // Prevent close on content click
+              className="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl relative overflow-y-auto"
+              style={{
+                maxHeight: "90vh", // Ensures modal height fits within the viewport
+              }}
             >
+              {/* Close Button */}
               <button
                 onClick={() => setIsKioskModalOpen(false)}
                 className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
               >
                 <X size={24} />
               </button>
+
+              {/* Content */}
               <h2 className="text-3xl font-bold mb-4 text-gray-800">
                 SanjivaniQCPR
               </h2>
