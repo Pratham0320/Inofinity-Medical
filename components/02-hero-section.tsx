@@ -13,6 +13,7 @@ export function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isKioskModalOpen, setIsKioskModalOpen] = useState(false);
   const [backgroundImages, setBackgroundImages] = useState<string[]>([]);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   useEffect(() => {
     if (backgroundImages.length > 0) {
@@ -211,10 +212,17 @@ export function HeroSection() {
               </button>
 
               {/* Content */}
-              <h2 className="text-3xl font-bold mb-4 text-gray-800">
+              <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
                 SanjivaniQCPR
               </h2>
               <div className="prose max-w-none">
+                {/* Insert Image */}
+                <img
+                  src="/images/Sanjivani_QCPR.png"
+                  alt="Sanjivani QCPR Device"
+                  className="w-full h-auto rounded-lg shadow-md mb-6 cursor-pointer"
+                  onClick={() => setIsImageModalOpen(true)}
+                />
                 <p className="italic text-lg font-semibold text-gray-900 hero-subtitle">
                   SanjivaniQCPR is an ergonomically designed & patented CPR
                   assist device for resuscitation of cardiac arrest victims by
@@ -277,6 +285,25 @@ export function HeroSection() {
                 </p>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+        {isImageModalOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsImageModalOpen(false)} // Close modal on background click
+          >
+            <motion.img
+              src="/images/Sanjivani_QCPR.png"
+              alt="Enlarged Sanjivani QCPR"
+              className="max-w-full max-h-full rounded-lg"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the image
+            />
           </motion.div>
         )}
       </AnimatePresence>
