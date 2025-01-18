@@ -6,8 +6,9 @@ import { YouTubeSection } from "@/components/05-youtube-section";
 import { OurBest } from "@/components/06-our-best";
 import { NewsSection } from "@/components/07-news-section";
 import TeamSection from "@/components/08-team-section";
-import { GetInTouch } from "@/components/09-get-in-touch";
-import { Footer } from "@/components/10-footer";
+import { GetInTouch } from "@/components/10-get-in-touch";
+import { Footer } from "@/components/11-footer";
+import Opportunities from "@/components/09-opportunities";
 
 export default function Home() {
   return (
@@ -25,6 +26,9 @@ export default function Home() {
       <NewsSection />
       <section id="team">
         <TeamSection />
+      </section>
+      <section id="opportunities">
+        <Opportunities />
       </section>
       <section id="about">
         <GetInTouch />

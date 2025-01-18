@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Search, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -11,10 +12,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Youtube, Instagram, Linkedin } from "lucide-react";
 import { MdEmail, MdPerson, MdMessage } from "react-icons/md";
+import ThankYouPage from "../thank-you/page";
 
 export default function Contact() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +29,19 @@ export default function Contact() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("success") === "true") {
+      setIsSubmitted(true);
+      // Remove the query parameter
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
+
+  if (isSubmitted) {
+    return <ThankYouPage />;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -55,7 +72,7 @@ export default function Contact() {
           <div className="flex items-center">
             <div className="hidden md:flex items-center space-x-6">
               <NavLink href="/">HOME</NavLink>
-              <NavLink href="/contact">CONTACT</NavLink>
+              <NavLink href="/opportunities">OPPORTUNITIES</NavLink>
               <NavLink href="/blog">BLOG</NavLink>
               <SearchForm />
             </div>
@@ -227,7 +244,7 @@ export default function Contact() {
               <input
                 type="hidden"
                 name="_next"
-                value="https://inofinity.vercel.app/contact"
+                value="https://inofinityrnd.com/contact?success=true"
               />
               <input
                 type="hidden"
@@ -406,8 +423,8 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
         <NavLink href="/" onClick={onClose}>
           HOME
         </NavLink>
-        <NavLink href="/contact" onClick={onClose}>
-          CONTACT US
+        <NavLink href="/opportunities" onClick={onClose}>
+          OPPORTUNITIES
         </NavLink>
         <NavLink href="/blog" onClick={onClose}>
           BLOG

@@ -95,10 +95,10 @@ export function Navigation() {
               FEATURES
             </NavLink>
             <NavLink
-              href="#latest-products"
-              onClick={() => scrollToSection("latest-products")}
+              href="#opportunities"
+              onClick={() => scrollToSection("opportunities")}
             >
-              SERVICES
+              OPPORTUNITIES
             </NavLink>
             <NavLink href="/contact">CONTACT US</NavLink>
             <NavLink href="/blog">BLOG</NavLink>
@@ -221,14 +221,14 @@ function MobileMenu({
           FEATURES
         </NavLink>
         <NavLink
-          href="#latest-products"
+          href="#opportunities"
           onClick={() => {
-            scrollToSection("latest-products");
+            scrollToSection("opportunities");
             onClose();
           }}
           className="text-white hover:text-yellow-300"
         >
-          SERVICES
+          OPPORTUNITIES
         </NavLink>
         <NavLink href="/contact" onClick={onClose}>
           CONTACT US
