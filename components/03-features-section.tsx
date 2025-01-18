@@ -104,7 +104,7 @@ export function FeaturesSection() {
               variants={itemVariants}
             >
               <motion.div
-                className="w-64 h-64 rounded-full bg-white flex flex-col items-center justify-center shadow-lg group relative overflow-hidden cursor-pointer mb-8"
+                className="w-64 h-64 rounded-full bg-white flex flex-col items-center justify-center shadow-lg group relative overflow-hidden mb-8"
                 whileHover="hover"
                 variants={shakeAnimation}
               >
