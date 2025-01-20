@@ -50,8 +50,7 @@ const shakeAnimation: Variants = {
     x: [0, -3, 3, -3, 3, 0],
     transition: {
       duration: 0.8,
-      repeat: Infinity,
-      repeatType: "reverse",
+      repeat: 0.2,
     },
   },
 };
