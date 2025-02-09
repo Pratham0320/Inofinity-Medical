@@ -1,5 +1,7 @@
 "use client";
 
+import { UploadButton } from "@uploadthing/react";
+import type { OurFileRouter } from "@/app/api/uploadthing/core";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -26,6 +28,7 @@ export default function Opportunities() {
   const [activeForm, setActiveForm] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const router = useRouter();
+  const [pdfUrl, setpdfUrl] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -127,6 +130,34 @@ export default function Opportunities() {
                   required
                 />
               </div>
+              <div>
+                <Label htmlFor="job-resume">Upload Resume (PDF only)</Label>
+                <UploadButton<OurFileRouter, "pdfUploader">
+                  endpoint="pdfUploader"
+                  onClientUploadComplete={(res) => {
+                    if (res && res.length > 0) {
+                      setpdfUrl(res[0].url); // Save uploaded pdf link
+                    }
+                  }}
+                  onUploadError={(error) =>
+                    alert(`Upload failed: ${error.message}`)
+                  }
+                />
+
+                {pdfUrl && (
+                  <p className="text-green-600 mt-2">
+                    Resume Uploaded!{" "}
+                    <a
+                      href={pdfUrl}
+                      target="_blank"
+                      className="underline text-blue-500"
+                    >
+                      View
+                    </a>
+                  </p>
+                )}
+              </div>
+              <input type="hidden" name="pdf_link" value={pdfUrl ?? ""} />
               <Button type="submit" className="w-full">
                 Submit Application
               </Button>
@@ -219,6 +250,34 @@ export default function Opportunities() {
                   <option value="6">6 months</option>
                 </select>
               </div>
+              <div>
+                <Label htmlFor="job-resume">Upload Resume (PDF only)</Label>
+                <UploadButton<OurFileRouter, "pdfUploader">
+                  endpoint="pdfUploader"
+                  onClientUploadComplete={(res) => {
+                    if (res && res.length > 0) {
+                      setpdfUrl(res[0].url); // Save uploaded pdf link
+                    }
+                  }}
+                  onUploadError={(error) =>
+                    alert(`Upload failed: ${error.message}`)
+                  }
+                />
+
+                {pdfUrl && (
+                  <p className="text-green-600 mt-2">
+                    Resume Uploaded!{" "}
+                    <a
+                      href={pdfUrl}
+                      target="_blank"
+                      className="underline text-blue-500"
+                    >
+                      View
+                    </a>
+                  </p>
+                )}
+              </div>
+              <input type="hidden" name="pdf_link" value={pdfUrl ?? ""} />
               <Button type="submit" className="w-full">
                 Submit Application
               </Button>
@@ -295,6 +354,34 @@ export default function Opportunities() {
                   required
                 />
               </div>
+              <div>
+                <Label htmlFor="job-resume">Upload Your Idea (PDF only)</Label>
+                <UploadButton<OurFileRouter, "pdfUploader">
+                  endpoint="pdfUploader"
+                  onClientUploadComplete={(res) => {
+                    if (res && res.length > 0) {
+                      setpdfUrl(res[0].url); // Save uploaded pdf link
+                    }
+                  }}
+                  onUploadError={(error) =>
+                    alert(`Upload failed: ${error.message}`)
+                  }
+                />
+
+                {pdfUrl && (
+                  <p className="text-green-600 mt-2">
+                    PDF Uploaded!{" "}
+                    <a
+                      href={pdfUrl}
+                      target="_blank"
+                      className="underline text-blue-500"
+                    >
+                      View
+                    </a>
+                  </p>
+                )}
+              </div>
+              <input type="hidden" name="pdf_link" value={pdfUrl ?? ""} />
               <Button type="submit" className="w-full">
                 Submit Idea
               </Button>
